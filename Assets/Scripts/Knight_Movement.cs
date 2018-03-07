@@ -18,10 +18,14 @@ public class Knight_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetAxisRaw("Vertical")==0)
 		rigid.AddForce (new Vector2 (Input.GetAxis ("Horizontal") * speed, 0), ForceMode2D.Force);
 		directionH = Input.GetAxis ("Horizontal");
+		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
+
 		KnightAnimator.SetFloat ("Phase", Input.GetAxisRaw ("Horizontal"));
+
+
 	}
 		
 	
