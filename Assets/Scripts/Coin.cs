@@ -7,7 +7,7 @@ public class Coin : MonoBehaviour {
 	public ParticleSystem sparkle;
 
 
-	private void OnCollisionEnter2D() 
+	private void OnTriggerEnter2D() 
 	{
 		FindObjectOfType<GameManager> ().addCoin (value);
 		Explode ();
@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour {
 	private void Explode() {
 		sparkle = GetComponent<ParticleSystem> ();
 			sparkle.Play();
-		Destroy (gameObject.GetComponent <CircleCollider2D>());
+		gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		Destroy(gameObject, sparkle.duration);
 	}
 }
