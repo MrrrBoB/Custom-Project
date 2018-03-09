@@ -24,6 +24,9 @@ public class Knight_Movement : MonoBehaviour {
 		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
 
 		KnightAnimator.SetFloat ("Phase", Input.GetAxisRaw ("Horizontal"));
+		/*if (Input.GetKeyDown(KeyCode.Space)) {
+			KnightAnimator.SetTrigger ("Attack");
+		}*/
 
 
 	}
