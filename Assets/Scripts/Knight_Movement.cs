@@ -9,6 +9,7 @@ public class Knight_Movement : MonoBehaviour {
 	public bool dead = false;
 	public bool isgrounded;
 	Animator KnightAnimator;
+	public ParticleSystem sparkles;
 
 	public float directionH;
 
@@ -16,15 +17,22 @@ public class Knight_Movement : MonoBehaviour {
 	void Start () {
 		KnightAnimator =GetComponent<Animator> ();
 		rigid = GetComponent<Rigidbody2D> ();
+		sparkles = GetComponent<ParticleSystem> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetAxisRaw("Vertical")==0&&!Input.GetButton("Fire1"))
-		rigid.AddForce (new Vector2 (Input.GetAxis ("Horizontal") * speed, 0), ForceMode2D.Force);
+		var x = Input.GetAxis ("Horizontal");
+
+		if ((!isgrounded)||Input.GetAxisRaw("Vertical")==0&&!Input.GetButton("Fire1"))
+			transform.Translate(x/5, 0, 0);
 		directionH = Input.GetAxis ("Horizontal");
 		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
-
+		if (Input.GetAxisRaw ("Vertical") < 0) {
+			GlimmerPlay ();
+		} else
+			GlimmerPause ();
+	
 		KnightAnimator.SetFloat ("Phase", Input.GetAxisRaw ("Horizontal"));
 		if (Input.GetButton("Fire1")) {
 			KnightAnimator.SetTrigger ("Attack");
@@ -47,5 +55,14 @@ public class Knight_Movement : MonoBehaviour {
 		}
 	}
 	
-
+	public void GlimmerPlay()
+	{
+		
+		sparkles.Play();
+	}
+	public void GlimmerPause()
+	{
+		
+		sparkles.Pause();
+	}
 }
