@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : MonoBehaviour {
+public class FireBall : MonoBehaviour {
 	public float timerf;
 
 	// Use this for initialization

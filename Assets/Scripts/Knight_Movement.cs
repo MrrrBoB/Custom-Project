@@ -25,7 +25,7 @@ public class Knight_Movement : MonoBehaviour {
 		var x = Input.GetAxis ("Horizontal");
 
 		if ((!isgrounded)||Input.GetAxisRaw("Vertical")==0&&!Input.GetButton("Fire1"))
-			transform.Translate(x/2, 0, 0);
+			transform.Translate(x/4, 0, 0);
 		directionH = Input.GetAxis ("Horizontal");
 		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
 		/*if (Input.GetAxisRaw ("Vertical") < 0) {
@@ -64,5 +64,8 @@ public class Knight_Movement : MonoBehaviour {
 	{
 		
 		sparkles.Pause();
+	}
+	public void damage (){
+		
 	}
 }
