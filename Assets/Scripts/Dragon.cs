@@ -18,7 +18,7 @@ public class Dragon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		print (timer);
+		//print (timer);
 		if (timer >= spawnTimer) {
 			Instantiate (prefab, new Vector2 (Random.Range(-13,13), 8),Quaternion.identity);
 			timer = 0f;

@@ -7,7 +7,7 @@ public class Knight_Movement : MonoBehaviour {
 	public float speed;
 	public float jump;
 	public bool dead = false;
-	public bool isgrounded;
+	public LayerMask groundLayer;
 	Animator KnightAnimator;
 	public ParticleSystem sparkles;
 
@@ -24,7 +24,7 @@ public class Knight_Movement : MonoBehaviour {
 	void Update () {
 		var x = Input.GetAxis ("Horizontal");
 
-		if ((!isgrounded)||Input.GetAxisRaw("Vertical")==0&&!Input.GetButton("Fire1"))
+		if (Input.GetAxisRaw("Vertical")==0&&!Input.GetButton("Fire1"))
 			transform.Translate(x/4, 0, 0);
 		directionH = Input.GetAxis ("Horizontal");
 		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
@@ -38,22 +38,32 @@ public class Knight_Movement : MonoBehaviour {
 			KnightAnimator.SetTrigger ("Attack");
 		}
 
-		if (Input.GetButtonDown ("Jump")&&isgrounded) {
-			rigid.AddForce (new Vector2 (0, jump), ForceMode2D.Force);
+		if (Input.GetButtonDown ("Jump")) {
+			
+
+
+			if (isGrounded()) {
+				Debug.Log ("found ground");
+				rigid.AddForce (new Vector2 (0, jump), ForceMode2D.Force);
+			} else {
+				Debug.Log ("No ground found");}
 		}
 	}
 		
-	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.transform.tag == "ground") {
-			isgrounded = true;
-		}
-	}
-	void OnCollisionExit2D(Collision2D collision)
+	private bool isGrounded()
 	{
-		if (collision.transform.tag == "ground") {
-			isgrounded = false;
+		Vector2 position = transform.position;
+		Vector2 direction = Vector2.down;
+		float distance = 2f;
+		Debug.DrawRay(position, direction, Color.green);
+		RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+		if (hit.collider != null) {
+			return true;
 		}
+
+		return false;
 	}
+
 	
 	public void GlimmerPlay()
 	{
