@@ -6,7 +6,8 @@ public class Knight_Movement : MonoBehaviour {
 	private Rigidbody2D rigid;
 	public float speed;
 	public float jump;
-	public bool dead = false;
+
+
 	public LayerMask groundLayer;
 	Animator KnightAnimator;
 	public ParticleSystem sparkles;
@@ -28,8 +29,8 @@ public class Knight_Movement : MonoBehaviour {
 			transform.Translate(x/4, 0, 0);
 		directionH = Input.GetAxis ("Horizontal");
 		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
-		/*if (Input.GetAxisRaw ("Vertical") < 0) {
-			GlimmerPlay ();
+
+			/*GlimmerPlay ();
 		} else
 			GlimmerPause ();
 	*/
@@ -75,7 +76,16 @@ public class Knight_Movement : MonoBehaviour {
 		
 		sparkles.Pause();
 	}
-	public void damage (){
+	public void damaged (bool dead){
+		if (!dead)
+		KnightAnimator.SetTrigger ("Damaged");
+		else KnightAnimator.SetBool("Dead", true);
 		
 	}
+	public bool isVulnerable ()
+	{
+		return !(Input.GetAxisRaw ("Vertical") < 0f);
+
+	}
+		
 }

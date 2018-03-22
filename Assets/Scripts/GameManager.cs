@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 	public static int brickCount=0;
 	public int coinCount = 0;
+	public int health;
+	public GameObject player;
+	public bool dead;
 
 	void Awake ()//singleton
 	{
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 
 		DontDestroyOnLoad (gameObject);
+
 
 	}
 
@@ -35,11 +39,25 @@ public class GameManager : MonoBehaviour {
 		coinCount += value;
 		print ("Coins: "+coinCount);
 	}
+	//fireball hits player
+	public void takeHit(int damage)
+	{
+		if (player.GetComponent<Knight_Movement> ().isVulnerable ()) {
+			health -= damage;
+			if (health <= 0)
+				dead = true;
+			player.GetComponent<Knight_Movement> ().damaged (dead);
+		}
+	}
 	public void LoadLevel(string Level)
 	{
 		
 		SceneManager.LoadScene (Level);
 		brickCount = 0;
+	}
+	public void damaged (int damage) {
+		health-=damage;
+
 	}
 
 	public void LoadNextLevel(){

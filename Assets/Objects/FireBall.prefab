@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 95419892528442508}
   - component: {fileID: 114057684613186384}
   - component: {fileID: 50953307492653230}
-  m_Layer: 0
+  - component: {fileID: 58060217992339780}
+  m_Layer: 9
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1988651481010384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.653859, y: -3.6503546, z: -9.763161}
+  m_LocalPosition: {x: 1.8831524, y: -4.092009, z: -9.763161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,6 +64,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58060217992339780
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988651481010384}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.5}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!95 &95419892528442508
 Animator:
   serializedVersion: 3
@@ -92,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerf: 0
+  damageStr: 10
+  effect: {fileID: 198659405600949686, guid: 9c8a805352d6a1d488240a503455ac3e, type: 2}
 --- !u!212 &212762039534844440
 SpriteRenderer:
   m_ObjectHideFlags: 1

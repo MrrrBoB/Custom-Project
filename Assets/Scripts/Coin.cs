@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour {
 	public int value;
-	public ParticleSystem sparkle;
 
+	public ParticleSystem effect;
 
 	private void OnTriggerEnter2D() 
 	{
@@ -14,9 +14,11 @@ public class Coin : MonoBehaviour {
 
 	}
 	private void Explode() {
-		sparkle = GetComponent<ParticleSystem> ();
-			sparkle.Play();
-		gameObject.GetComponent<SpriteRenderer>().enabled = false;
-		Destroy(gameObject, sparkle.duration);
+		ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
+
+
+			
+
+		Destroy(gameObject);
 	}
 }
