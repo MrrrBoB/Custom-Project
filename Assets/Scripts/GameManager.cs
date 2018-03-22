@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject player;
 	public bool dead;
 
+
 	void Awake ()//singleton
 	{
 		//If instance is empty, create instance
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour {
 	{
 		if (player.GetComponent<Knight_Movement> ().isVulnerable ()) {
 			health -= damage;
+
 			if (health <= 0)
 				dead = true;
 			player.GetComponent<Knight_Movement> ().damaged (dead);
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour {
 	}
 	public void damaged (int damage) {
 		health-=damage;
+
 
 	}
 
