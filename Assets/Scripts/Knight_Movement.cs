@@ -9,7 +9,7 @@ public class Knight_Movement : MonoBehaviour {
 
 
 	public LayerMask groundLayer;
-	Animator KnightAnimator;
+	private Animator KnightAnimator;
 	public ParticleSystem sparkles;
 
 	public float directionH;
@@ -28,12 +28,11 @@ public class Knight_Movement : MonoBehaviour {
 		if (Input.GetAxisRaw("Vertical")==0&&!Input.GetButton("Fire1"))
 			transform.Translate(x/4, 0, 0);
 		directionH = Input.GetAxis ("Horizontal");
+
 		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
 
-			/*GlimmerPlay ();
-		} else
-			GlimmerPause ();
-	*/
+
+	
 		KnightAnimator.SetFloat ("Phase", Input.GetAxisRaw ("Horizontal"));
 		if (Input.GetButton("Fire1")) {
 			KnightAnimator.SetTrigger ("Attack");

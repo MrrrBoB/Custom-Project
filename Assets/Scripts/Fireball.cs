@@ -6,6 +6,7 @@ public class Fireball : MonoBehaviour {
 	public float timerf;
 	public int damageStr;
 	public ParticleSystem effect;
+	public ParticleSystem effectFloor;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,12 @@ public class Fireball : MonoBehaviour {
 			Debug.Log ("Hit!");
 			FindObjectOfType< GameManager> ().takeHit (damageStr);
 		}
+		if (obj.gameObject.tag == "ground") {
+			ParticleSystem burst = Instantiate (effectFloor, transform.position, Quaternion.identity);
+		} else {
+			
 			ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
+		}
 			Destroy (gameObject);
 		
 	}

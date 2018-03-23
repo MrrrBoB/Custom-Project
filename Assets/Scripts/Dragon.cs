@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dragon : MonoBehaviour {
 	public float timer;
 	public float spawnTimer;
-	public GameObject prefab;
+	public GameObject [] prefabs = new GameObject[3];
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +20,7 @@ public class Dragon : MonoBehaviour {
 		timer += Time.deltaTime;
 		//print (timer);
 		if (timer >= spawnTimer) {
-			Instantiate (prefab, new Vector2 (Random.Range(-13,13), 8),Quaternion.identity);
+			Instantiate (prefabs[Random.Range(0, 3)], new Vector2 (Random.Range(-13,13), 8),Quaternion.identity);
 			timer = 0f;
 
 		}
