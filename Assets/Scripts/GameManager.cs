@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
 
 
 	public static GameManager instance = null;
-	public static int brickCount=0;
 	public int coinCount = 0;
 	public int health;
 	public GameObject player;
@@ -26,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad (gameObject);
 
-
+		player = GameObject.Find ("PlayerChar");
 	}
 
 	/*public void CCursor ()
@@ -57,14 +56,14 @@ public class GameManager : MonoBehaviour {
 	{
 		
 		SceneManager.LoadScene (Level);
-		brickCount = 0;
+
 	}
 
 
 	public void LoadNextLevel(){
 		
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex+1);
-		brickCount = 0;
+
 	}
 	public void QuitGame(){
 		Debug.Log ("Quit Game");

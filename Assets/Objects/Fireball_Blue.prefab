@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114709748421302054}
   - component: {fileID: 50730235811748292}
   - component: {fileID: 58896893174430406}
+  - component: {fileID: 114906326455749618}
   m_Layer: 9
   m_Name: Fireball_Blue
   m_TagString: Untagged
@@ -112,6 +113,19 @@ MonoBehaviour:
   effect: {fileID: 198147413197348626, guid: ec9532c641c56ca4ca30c2d087cc9ffa, type: 2}
   effectFloor: {fileID: 198803128549124614, guid: 94b548383a4b1c9408a6bc53e3945f4c,
     type: 2}
+--- !u!114 &114906326455749618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357031408488926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f503116988389484a9b2dfb60264d9c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1831378981934994, guid: 7ece6bc269d203a44a30d6d8a83bf6fe, type: 2}
+  height: -6
 --- !u!212 &212542317768979982
 SpriteRenderer:
   m_ObjectHideFlags: 1

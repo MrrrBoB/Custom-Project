@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerf: 0
   damageStr: 10
-  effect: {fileID: 198407527823505126, guid: 2f1072d74da08a646beb9cea3706b2cf, type: 2}
+  effect: {fileID: 198793108801847748, guid: 527336a98003cef49a8ae9a314baa8b9, type: 2}
   effectFloor: {fileID: 198427938912578382, guid: 7c6d406a10722bc4197efef269c53449,
     type: 2}
 --- !u!114 &114707743739743726
