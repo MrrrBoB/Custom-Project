@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Knight_Block_Up
+  m_Name: Knight_Walk_Left_Swipe
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,13 +19,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300048, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
+      value: {fileID: 21300008, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300050, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
+      value: {fileID: 21300010, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300052, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
+      value: {fileID: 21300012, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
     - time: 0.25
-      value: {fileID: 21300054, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
+      value: {fileID: 21300014, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -45,10 +45,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300048, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
-    - {fileID: 21300050, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
-    - {fileID: 21300052, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
-    - {fileID: 21300054, guid: e4eed01d116fb524eb8e9826a3a50784, type: 3}
+    - {fileID: 21300008, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
+    - {fileID: 21300010, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
+    - {fileID: 21300012, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
+    - {fileID: 21300014, guid: ef3737b3a1f8d88428a0e23a22944a5f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

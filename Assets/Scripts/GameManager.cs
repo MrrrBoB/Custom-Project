@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad (gameObject);
 
-		player = GameObject.Find ("PlayerChar");
+		player = FindObjectOfType<Knight_Movement> ().gameObject;
 	}
 
 	/*public void CCursor ()
