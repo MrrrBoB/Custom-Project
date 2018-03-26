@@ -5,45 +5,53 @@ using UnityEngine;
 public class Knight_Movement : MonoBehaviour {
 	private Rigidbody2D rigid;
 	public float speed;
-	public float jump;
-	public bool iframe;
+	public float jump; 
 	public float swingRange;
-	private bool lookLeft;
+	public int facing;
+	public bool unin;
+	public int hitcount;
+	//1=left, 2=right, 3= up
 
 
 	public LayerMask groundLayer;
 	private Animator KnightAnimator;
 	public ParticleSystem sparkles;
 
-	public float directionH;
+
 
 	// Use this for initialization
 	void Start () {
 		KnightAnimator =GetComponent<Animator> ();
 		rigid = GetComponent<Rigidbody2D> ();
+		hitcount = 0;
+
 		//sparkles = GetComponent<ParticleSystem> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		var x = Input.GetAxis ("Horizontal");
-		transform.Translate(x/4, 0, 0);
+		var axisX = Input.GetAxisRaw ("Horizontal");
+		var axisY = Input.GetAxisRaw ("Vertical");
+		if (axisX < 0)
+			facing = 1;
+		else if (axisX > 0)
+			facing = 2;
+		else
+			facing = 3;
+		transform.Translate(axisX/4, 0, 0);
 	
-		lookLeft = (x < 0);
-		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
 
+		KnightAnimator.SetFloat ("PhaseV", axisY);
+		KnightAnimator.SetFloat ("Phase", axisX);
 
-	
-		KnightAnimator.SetFloat ("Phase", Input.GetAxisRaw ("Horizontal"));
-		if (Input.GetButton("Fire1")) {
+		if (Input.GetButtonDown("Fire1")||Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow)) {
 			KnightAnimator.SetTrigger ("Attack");
 			Swipe ();
+			Debug.Log (hitcount); 
 		}
 
+
 		if (Input.GetButtonDown ("Jump")) {
-			
-
-
 			if (isGrounded()) {
 				Debug.Log ("found ground");
 				rigid.AddForce (new Vector2 (0, jump), ForceMode2D.Force);
@@ -51,6 +59,9 @@ public class Knight_Movement : MonoBehaviour {
 				Debug.Log ("No ground found");}
 		}
 	}
+
+
+
 		
 	private bool isGrounded()
 	{
@@ -62,47 +73,51 @@ public class Knight_Movement : MonoBehaviour {
 		if (hit.collider != null) {
 			return true;
 		}
-
-		return false;
+			return false;
 	}
 
-	
-	public void GlimmerPlay()
-	{
-		
-		sparkles.Play();
-	}
-	public void GlimmerPause()
-	{
-		
-		sparkles.Pause();
-	}
+
+
 	public void damaged (bool dead){
 		if (!dead)
 		KnightAnimator.SetTrigger ("Damaged");
 		else KnightAnimator.SetBool("Dead", true);
+		}
 
-		
-	}
+
 	public bool isVulnerable ()
 	{
-		return (!(Input.GetAxisRaw ("Vertical") < 0f)||iframe);
-
+		return (!(Input.GetAxisRaw ("Vertical") < 0f));
 	}
+
+
+
+
+
 	public void Swipe()
 	{
-		
-			Vector2 position = transform.position;
+		Vector2 position = transform.position;
 		Vector2 direction;
-		if (lookLeft)
+
+		switch (facing) {
+		case 1:
 			direction = Vector2.left;
-		else 
+			break;
+		case 2:
 			direction = Vector2.right;
-		Debug.DrawRay(position, direction, Color.green);
+			break;
+		case 3:
+			direction = Vector2.up;
+			break;
+		default:
+			direction = Vector2.up;
+			break;
+		}
+		//Debug.DrawRay(position, direction, Color.green);
 		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange);
 		if (hit.collider != null) {
 			//damage
 		}
+		hitcount++;
 	}
-		
 }

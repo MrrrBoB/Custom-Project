@@ -1032,7 +1032,12 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 409853ae667e81140b2ef80b398a5abf, type: 2}
+      objectReference: {fileID: 9100000, guid: 10c12e3147470804b8c957be120df150, type: 2}
+    - target: {fileID: 198609692600272740, guid: 034a5d16d48d30f4385f564ad9dba399,
+        type: 2}
+      propertyPath: randomSeed
+      value: 49285810
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 034a5d16d48d30f4385f564ad9dba399, type: 2}
   m_IsPrefabParent: 0
