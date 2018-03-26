@@ -6,6 +6,9 @@ public class Knight_Movement : MonoBehaviour {
 	private Rigidbody2D rigid;
 	public float speed;
 	public float jump;
+	public bool iframe;
+	public float swingRange;
+	private bool lookLeft;
 
 
 	public LayerMask groundLayer;
@@ -24,11 +27,9 @@ public class Knight_Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		var x = Input.GetAxis ("Horizontal");
-
-
-			transform.Translate(x/4, 0, 0);
-		directionH = Input.GetAxis ("Horizontal");
-
+		transform.Translate(x/4, 0, 0);
+	
+		lookLeft = (x < 0);
 		KnightAnimator.SetFloat ("PhaseV", Input.GetAxisRaw ("Vertical"));
 
 
@@ -36,6 +37,7 @@ public class Knight_Movement : MonoBehaviour {
 		KnightAnimator.SetFloat ("Phase", Input.GetAxisRaw ("Horizontal"));
 		if (Input.GetButton("Fire1")) {
 			KnightAnimator.SetTrigger ("Attack");
+			Swipe ();
 		}
 
 		if (Input.GetButtonDown ("Jump")) {
@@ -79,12 +81,28 @@ public class Knight_Movement : MonoBehaviour {
 		if (!dead)
 		KnightAnimator.SetTrigger ("Damaged");
 		else KnightAnimator.SetBool("Dead", true);
+
 		
 	}
 	public bool isVulnerable ()
 	{
-		return !(Input.GetAxisRaw ("Vertical") < 0f);
+		return (!(Input.GetAxisRaw ("Vertical") < 0f)||iframe);
 
+	}
+	public void Swipe()
+	{
+		
+			Vector2 position = transform.position;
+		Vector2 direction;
+		if (lookLeft)
+			direction = Vector2.left;
+		else 
+			direction = Vector2.right;
+		Debug.DrawRay(position, direction, Color.green);
+		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange);
+		if (hit.collider != null) {
+			//damage
+		}
 	}
 		
 }
