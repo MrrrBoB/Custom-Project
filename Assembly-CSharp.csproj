@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera_Follow.cs" />
+     <Compile Include="Assets\Scripts\Chicken_Movement.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\Dragon.cs" />
      <Compile Include="Assets\Scripts\Fireball.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\PE_toggle.cs" />
      <Compile Include="Assets\Scripts\PEstart.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\SpawnOnHit.cs" />
      <Compile Include="Assets\Scripts\Uninterruptable.cs" />
  <Reference Include="UnityEngine.UI">

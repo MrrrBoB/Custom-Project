@@ -25,7 +25,7 @@ public class FirePuddle : MonoBehaviour {
 			FindObjectOfType< GameManager> ().takeHit (damageStr);
 		}
 	}
-	IEnumerator DelayedAnimation(){
+	private IEnumerator DelayedAnimation(){
 		
 		puddleAnim.SetInteger ("Stage", 1);
 		yield return new WaitForSeconds (2.667f);
