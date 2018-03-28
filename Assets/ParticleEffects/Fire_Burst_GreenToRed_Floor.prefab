@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198427938912578382}
   - component: {fileID: 199040425653377768}
   - component: {fileID: 114409577946044162}
+  - component: {fileID: 114655194336038194}
   m_Layer: 0
   m_Name: Fire_Burst_GreenToRed_Floor
   m_TagString: Untagged
@@ -53,6 +54,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cded4574f43cf84ca84dc285907d227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114655194336038194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530800959787318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529a82b317c8bb640a45604c8747b3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpType: 0
+  pic: {fileID: 0}
+  images: []
+  effect: {fileID: 0}
 --- !u!198 &198427938912578382
 ParticleSystem:
   m_ObjectHideFlags: 1

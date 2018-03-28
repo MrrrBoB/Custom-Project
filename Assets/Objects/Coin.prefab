@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 58605280874479404}
   - component: {fileID: 212808093397882198}
   - component: {fileID: 95671352530054164}
-  - component: {fileID: 114081656994988756}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -67,7 +66,7 @@ Animator:
   m_GameObject: {fileID: 1003505518922702}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82374e619b8aeae4c9d24bc4f4a068de, type: 2}
+  m_Controller: {fileID: 9100000, guid: 35ea885d392fe1e43a6f8bde1bfbad31, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -75,19 +74,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114081656994988756
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1003505518922702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e846a28cac0cba4f950076bf0a486e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 20
-  effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
 --- !u!212 &212808093397882198
 SpriteRenderer:
   m_ObjectHideFlags: 1

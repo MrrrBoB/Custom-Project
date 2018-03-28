@@ -6,6 +6,7 @@ public class Dragon : MonoBehaviour {
 	public float timer;
 	public float spawnTimer;
 	public GameObject [] prefabs = new GameObject[3];
+	public enum Stage {one, two, three};
 
 	// Use this for initialization
 	void Start () {

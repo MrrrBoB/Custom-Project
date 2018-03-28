@@ -37,7 +37,7 @@ public class Chicken_Movement : MonoBehaviour {
 	public void Spit()
 	{
 		ChickenAnim.SetTrigger ("Spit");
-		Instantiate (prefab, new Vector2 (gameObject.transform.position.x-2, gameObject.transform.position.y), gameObject.transform.rotation);
+		Instantiate (prefab, new Vector2 (gameObject.transform.position.x-2, gameObject.transform.position.y), Quaternion.Euler (0, (direction+1)*90, 0));
 	}
 	private IEnumerator routine()
 	{
