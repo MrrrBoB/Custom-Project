@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 	public int damage;
 	public float lifeSpan;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,6 +14,7 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Destroy (gameObject, lifeSpan);
+
 
 	}
 }

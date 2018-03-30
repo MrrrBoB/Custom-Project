@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour {
 			player.GetComponent<Knight_Movement> ().damaged (dead);
 		}
 	}
+
 	public void LoadLevel(string Level)
 	{
 		
@@ -69,5 +70,6 @@ public class GameManager : MonoBehaviour {
 		Debug.Log ("Quit Game");
 		Application.Quit (); 
 	}
+
 
 }
