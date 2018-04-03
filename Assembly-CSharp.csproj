@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\PE_toggle.cs" />
      <Compile Include="Assets\Scripts\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\Chicken_Movement.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
@@ -59,9 +58,11 @@
      <Compile Include="Assets\Scripts\Fireball.cs" />
      <Compile Include="Assets\Scripts\FirePuddle.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\HealthBarController.cs" />
      <Compile Include="Assets\Scripts\Knight_Movement.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
+     <Compile Include="Assets\Scripts\PE_toggle.cs" />
      <Compile Include="Assets\Scripts\PEstart.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />

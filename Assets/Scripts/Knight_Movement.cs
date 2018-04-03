@@ -6,16 +6,21 @@ public class Knight_Movement : MonoBehaviour {
 	private Rigidbody2D rigid;
 	public float speed;
 	public float jump; 
-	public float swingRange;
 	public int facing;
-	public bool unin;
 	public int hitcount;
+	public LayerMask groundLayer;
+	public LayerMask enemyLayer;
+	private Animator KnightAnimator;
+	public ParticleSystem sparkles;
+	[Space(20), Header ("Swinging")]
+	public int swingMin;
+	public int swingMax;
+	public float swingRange;
+	public int attDmg;
 	//1=left, 2=right, 3= up
 
 
-	public LayerMask groundLayer;
-	private Animator KnightAnimator;
-	public ParticleSystem sparkles;
+
 
 
 
@@ -101,22 +106,24 @@ public class Knight_Movement : MonoBehaviour {
 
 		switch (facing) {
 		case 1:
-			direction = Vector2.left;
+			direction = new Vector2(swingRange*-1, 0);
 			break;
 		case 2:
-			direction = Vector2.right;
+			direction = new Vector2(swingRange, 0);
 			break;
 		case 3:
-			direction = Vector2.up;
+			direction = new Vector2(0, swingRange);
 			break;
 		default:
 			direction = Vector2.up;
 			break;
 		}
+		Debug.DrawRay (position, direction, Color.green, .25f);
 		//Debug.DrawRay(position, direction, Color.green);
-		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange);
+		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange, enemyLayer);
 		if (hit.collider != null) {
-			//damage
+			hit.collider.gameObject.GetComponent<Health> ().ChangeHealth (attDmg * -1);
+			Debug.Log ("you smacked the chicken");
 		}
 		hitcount++;
 	}

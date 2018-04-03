@@ -22,7 +22,7 @@ public class FirePuddle : MonoBehaviour {
 	{
 		if (obj.gameObject.tag == "Player") {
 			Debug.Log ("You stepped in fire");
-			FindObjectOfType< GameManager> ().takeHit (damageStr);
+			FindObjectOfType< GameManager> ().takeHit (damageStr, obj.gameObject);
 		}
 	}
 	private IEnumerator DelayedAnimation(){

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212723995638563996}
   - component: {fileID: 50895152643316632}
   - component: {fileID: 70247055629698996}
+  - component: {fileID: 114158101056000068}
   - component: {fileID: 95422903063739076}
   - component: {fileID: 114773491190890204}
   m_Layer: 9
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146614947807634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.22, y: -3.92, z: 0}
+  m_LocalPosition: {x: 0.14, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children:
   - {fileID: 4778377735648702}
@@ -90,7 +91,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -120,7 +121,7 @@ Animator:
   m_GameObject: {fileID: 1146614947807634}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 409853ae667e81140b2ef80b398a5abf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 10c12e3147470804b8c957be120df150, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -128,6 +129,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114158101056000068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146614947807634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc3b7275f3db0140ae3c406263dc531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animV: {fileID: 0}
+  HP: 100
 --- !u!114 &114309447131724602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,12 +165,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  jump: 35000
+  jump: 40000
+  facing: 0
+  hitcount: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   sparkles: {fileID: 0}
-  directionH: 0
+  swingMin: 0
+  swingMax: 0
+  swingRange: 3
+  attDmg: 10
 --- !u!198 &198609692600272740
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -216,7 +238,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1631877439
+  randomSeed: 49285810
   InitialModule:
     serializedVersion: 3
     enabled: 1

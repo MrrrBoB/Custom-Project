@@ -8,12 +8,13 @@ public class Chicken_Movement : MonoBehaviour {
 	public Animator ChickenAnim;
 	public bool goingLeft;
 	public int direction;
-	public int speed;
+	public float speed;
+	private float holdS;
 	// Use this for initialization
 	void Start () {
 		ChickenAnim = GetComponent<Animator> ();
 		goingLeft = true;
-		speed = 1;
+		holdS = speed;
 		direction = -1;
 		StartCoroutine ("routine");
 
@@ -30,14 +31,15 @@ public class Chicken_Movement : MonoBehaviour {
 	{
 		goingLeft = !goingLeft;
 		direction *= -1;
-		speed = 1;
+		speed = holdS;
 		GetComponent<SpriteRenderer>().flipX=!goingLeft;
 
 	}
 	public void Spit()
 	{
 		ChickenAnim.SetTrigger ("Spit");
-		Instantiate (prefab, new Vector2 (gameObject.transform.position.x-2, gameObject.transform.position.y), Quaternion.Euler (0, (direction+1)*90, 0));
+		GameObject mFire = (GameObject)Instantiate (prefab, new Vector2 (gameObject.transform.position.x+direction, gameObject.transform.position.y), Quaternion.Euler (0, (direction+1)*90, 0));
+		mFire.GetComponent<Rigidbody2D> ().velocity = new Vector2 (6 * direction, 0);
 	}
 	private IEnumerator routine()
 	{

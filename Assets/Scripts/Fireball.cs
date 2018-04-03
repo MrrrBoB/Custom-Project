@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour {
-	public float timerf;
+	
 	public int damageStr;
 	public ParticleSystem effect;
 	public ParticleSystem effectFloor;
 
 	// Use this for initialization
-	void Start () {
-		timerf = 0;
 
-	}
 	
 	// Update is called once per frame
 
@@ -20,9 +17,10 @@ public class Fireball : MonoBehaviour {
 	{
 		if (obj.gameObject.tag == "Player") {
 			Debug.Log ("Hit!");
-			FindObjectOfType< GameManager> ().takeHit (damageStr);
+			FindObjectOfType< GameManager> ().takeHit (damageStr, obj.gameObject);
+			obj.gameObject.GetComponent<Health> ().ChangeHealth (damageStr * -1);
 		}
-		if (obj.gameObject.tag == "ground") {
+		if (obj.gameObject.tag == "Ground") {
 			ParticleSystem burst = Instantiate (effectFloor, transform.position, Quaternion.identity);
 		} else {
 			
