@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4376197403195824}
   - component: {fileID: 212194041350495106}
   - component: {fileID: 95321715825281772}
-  - component: {fileID: 114360703051299628}
   - component: {fileID: 58264780696211702}
   - component: {fileID: 50948648095184692}
-  m_Layer: 0
+  - component: {fileID: 114288654070134818}
+  m_Layer: 10
   m_Name: FireBall_Mini_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -96,7 +96,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114360703051299628
+--- !u!114 &114288654070134818
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -104,11 +104,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1050099967199994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c4d4ef9691648488666a82a356863a, type: 3}
+  m_Script: {fileID: 11500000, guid: cfe9041ab33304046995cfb38f3b4f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  lifeSpan: 1
+  lifespan: 1
+  damageStr: 10
+  effect: {fileID: 198936087929056434, guid: 2c024c80ea41a574ebaa83cc4de92269, type: 2}
+  effectFloor: {fileID: 198568404876417368, guid: d8f4803755ad43a4ca9dba499c07aa01,
+    type: 2}
 --- !u!212 &212194041350495106
 SpriteRenderer:
   m_ObjectHideFlags: 1

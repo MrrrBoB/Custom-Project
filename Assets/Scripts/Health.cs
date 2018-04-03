@@ -21,6 +21,7 @@ public class Health : MonoBehaviour {
 			Die ();
 		} else
 			animV.SetTrigger ("Damaged");
+		FindObjectOfType<HealthBarController> ().changeHealth (value*-1);
 			
 	}
 	public void Die ()

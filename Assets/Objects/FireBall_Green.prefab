@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50640241235913766}
   - component: {fileID: 58008937113827538}
   - component: {fileID: 114707743739743726}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: FireBall_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe9041ab33304046995cfb38f3b4f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerf: 0
+  lifespan: 5
   damageStr: 10
   effect: {fileID: 198793108801847748, guid: 527336a98003cef49a8ae9a314baa8b9, type: 2}
   effectFloor: {fileID: 198427938912578382, guid: 7c6d406a10722bc4197efef269c53449,

@@ -59,7 +59,7 @@ public class Knight_Movement : MonoBehaviour {
 		if (Input.GetButtonDown ("Jump")) {
 			if (isGrounded()) {
 				Debug.Log ("found ground");
-				rigid.AddForce (new Vector2 (0, jump), ForceMode2D.Force);
+				rigid.AddForce (new Vector2 (0, jump*10000), ForceMode2D.Force);
 			} else {
 				Debug.Log ("No ground found");}
 		}
@@ -85,15 +85,12 @@ public class Knight_Movement : MonoBehaviour {
 
 	public void damaged (bool dead){
 		if (!dead)
-		KnightAnimator.SetTrigger ("Damaged");
+			KnightAnimator.SetTrigger ("Damaged");
 		else KnightAnimator.SetBool("Dead", true);
 		}
 
 
-	public bool isVulnerable ()
-	{
-		return (!(Input.GetAxisRaw ("Vertical") < 0f));
-	}
+
 
 
 
@@ -123,6 +120,8 @@ public class Knight_Movement : MonoBehaviour {
 		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange, enemyLayer);
 		if (hit.collider != null) {
 			hit.collider.gameObject.GetComponent<Health> ().ChangeHealth (attDmg * -1);
+			hit.collider.gameObject.GetComponent<Chicken_Movement> ().Whack ();
+
 			Debug.Log ("you smacked the chicken");
 		}
 		hitcount++;

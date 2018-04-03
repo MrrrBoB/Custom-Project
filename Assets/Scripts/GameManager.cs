@@ -41,17 +41,7 @@ public class GameManager : MonoBehaviour {
 		print ("Coins: "+coinCount);
 	}
 	//fireball hits player
-	public void takeHit(int damage,  GameObject victim)
-	{
-		if (player.GetComponent<Knight_Movement> ().isVulnerable ()) {
-			health -= damage;
-			FindObjectOfType<HealthBarController> ().changeHealth (damage);
 
-			if (health <= 0)
-				dead = true;
-			player.GetComponent<Knight_Movement> ().damaged (dead);
-		}
-	}
 
 	public void LoadLevel(string Level)
 	{

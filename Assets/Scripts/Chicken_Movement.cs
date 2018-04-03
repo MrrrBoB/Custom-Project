@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chicken_Movement : MonoBehaviour {
 	public GameObject prefab;
-	public int health;
+	public ParticleSystem effect;
 	public Animator ChickenAnim;
 	public bool goingLeft;
 	public int direction;
@@ -33,7 +33,10 @@ public class Chicken_Movement : MonoBehaviour {
 		direction *= -1;
 		speed = holdS;
 		GetComponent<SpriteRenderer>().flipX=!goingLeft;
-
+		}
+	public void Whack()
+	{
+		ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
 	}
 	public void Spit()
 	{

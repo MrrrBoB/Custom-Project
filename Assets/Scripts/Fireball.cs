@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour {
-	
+	public float lifespan;
 	public int damageStr;
 	public ParticleSystem effect;
 	public ParticleSystem effectFloor;
 
 	// Use this for initialization
-
+	public void Start()
+	{
+		Destroy (gameObject, lifespan);
+	}
 	
 	// Update is called once per frame
 
@@ -17,7 +20,7 @@ public class Fireball : MonoBehaviour {
 	{
 		if (obj.gameObject.tag == "Player") {
 			Debug.Log ("Hit!");
-			FindObjectOfType< GameManager> ().takeHit (damageStr, obj.gameObject);
+
 			obj.gameObject.GetComponent<Health> ().ChangeHealth (damageStr * -1);
 		}
 		if (obj.gameObject.tag == "Ground") {

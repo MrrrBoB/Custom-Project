@@ -9,10 +9,11 @@ public class PowerUp : MonoBehaviour {
 	public Sprite [] images= new Sprite[5];
 	public ParticleSystem effect;
 	public int value;
-	public GameObject manager;
+	public GameObject player;
 	public void Start(){
+		player = FindObjectOfType<Knight_Movement>().gameObject;
 		pic = GetComponent<SpriteRenderer> ();
-		manager = FindObjectOfType<GameManager> ().gameObject;
+
 		switch (powerUpType) {
 		case Power.HP:
 			pic.sprite = images [0];
@@ -40,10 +41,10 @@ public class PowerUp : MonoBehaviour {
 	{
 		switch (powerUpType) {
 		case Power.HP:
-			manager.GetComponent<GameManager> ().health += value;
+			player.GetComponent<Health> ().ChangeHealth (value);
 			break;
 		case Power.DMG:
-			pic.sprite = images [1];
+			player.GetComponent<Knight_Movement> ().attDmg *= 2;
 			break;
 		case Power.INV:
 			pic.sprite = images [2];

@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1050099967199994, guid: 9aab1fa04e569ab41b8d54fb4c890f25, type: 2}
-  health: 0
+  effect: {fileID: 198604678869859334, guid: 39a963e2d7ca23f44ac5778d5e99abec, type: 2}
   ChickenAnim: {fileID: 0}
   goingLeft: 0
   direction: 0
