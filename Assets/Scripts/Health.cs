@@ -5,9 +5,11 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 	public Animator animV;
 	public int HP;
+	public UIManager UIM;
 	public void Start()
 	{
 		animV = GetComponent<Animator> ();
+		UIM = FindObjectOfType<UIManager> ().GetComponent<UIManager> ();
 	}
 
 
@@ -21,7 +23,7 @@ public class Health : MonoBehaviour {
 			Die ();
 		} else
 			animV.SetTrigger ("Damaged");
-		FindObjectOfType<HealthBarController> ().changeHealth (value*-1);
+		UIM.changeHealth (value*-1);
 			
 	}
 	public void Die ()

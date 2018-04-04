@@ -13,12 +13,10 @@ public class Coin : MonoBehaviour {
 		Explode ();
 
 	}
+
+
 	private void Explode() {
 		ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
-
-
-			
-
 		Destroy(gameObject);
 	}
 

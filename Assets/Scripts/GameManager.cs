@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public int health;
 	public GameObject player;
 	public bool dead;
+	public UIManager UIM;
 
 
 
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 
 		player = FindObjectOfType<Knight_Movement> ().gameObject;
+		UIM = FindObjectOfType<UIManager> ().GetComponent<UIManager> ();
 	}
 
 	/*public void CCursor ()
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour {
 	{
 		coinCount += value;
 		print ("Coins: "+coinCount);
+		UIM.AddCoins (coinCount);
 	}
 	//fireball hits player
 
