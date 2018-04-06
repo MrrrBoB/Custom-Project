@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\PE_toggle.cs" />
      <Compile Include="Assets\Scripts\PEstart.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
+     <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\SpawnOnHit.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Scripts\Uninterruptable.cs" />

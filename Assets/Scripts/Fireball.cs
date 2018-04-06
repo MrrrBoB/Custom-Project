@@ -23,7 +23,7 @@ public class Fireball : MonoBehaviour {
 
 			obj.gameObject.GetComponent<Health> ().ChangeHealth (damageStr * -1);
 		}
-		if (obj.gameObject.tag == "Ground") {
+		if (obj.gameObject.tag == "ground") {
 			ParticleSystem burst = Instantiate (effectFloor, transform.position, Quaternion.identity);
 		} else {
 			

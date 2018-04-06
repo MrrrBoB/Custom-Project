@@ -17,6 +17,7 @@ public class Knight_Movement : MonoBehaviour {
 	public int swingMax;
 	public float swingRange;
 	public int attDmg;
+	public Shield shld;
 	//1=left, 2=right, 3= up
 
 
@@ -28,6 +29,7 @@ public class Knight_Movement : MonoBehaviour {
 	void Start () {
 		KnightAnimator =GetComponent<Animator> ();
 		rigid = GetComponent<Rigidbody2D> ();
+		shld = FindObjectOfType<Shield> ().GetComponent<Shield>();
 		hitcount = 0;
 
 		//sparkles = GetComponent<ParticleSystem> ();
@@ -80,20 +82,7 @@ public class Knight_Movement : MonoBehaviour {
 		}
 			return false;
 	}
-
-
-
-	public void damaged (bool dead){
-		if (!dead)
-			KnightAnimator.SetTrigger ("Damaged");
-		else KnightAnimator.SetBool("Dead", true);
-		}
-
-
-
-
-
-
+		
 
 
 	public void Swipe()
