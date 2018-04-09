@@ -19,10 +19,12 @@ public class Health : MonoBehaviour {
 
 	public void ChangeHealth(int value)
 	{HP += value;
-		if (HP <= 0) {
-			Die ();
-		} else
-			animV.SetTrigger ("Damaged");
+		if (value <= 0) {
+			if (HP <= 0) {
+				Die ();
+			} else
+				animV.SetTrigger ("Damaged");
+		}
 		UIM.changeHealth (value*-1);
 			
 	}

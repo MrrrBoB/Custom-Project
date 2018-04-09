@@ -13,7 +13,7 @@ public class PowerUp : MonoBehaviour {
 	public void Start(){
 		player = FindObjectOfType<Knight_Movement>().gameObject;
 		pic = GetComponent<SpriteRenderer> ();
-
+		powerUpType = (Power)Random.Range (0, 4);
 		switch (powerUpType) {
 		case Power.HP:
 			pic.sprite = images [0];
