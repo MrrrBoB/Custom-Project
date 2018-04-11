@@ -38,5 +38,9 @@ public class UIManager : MonoBehaviour {
 		coinCounter.text = count.ToString();
 	}
 	public void changeHealth (int damage)
-	{healthBar.value -= damage;}
+	{healthBar.value -= damage;
+		if (healthBar.value <= 0) {
+			FindObjectOfType<GameManager> ().GetComponent<GameManager> ().LoadLevel ("GameOver");
+		}
+		}
 }

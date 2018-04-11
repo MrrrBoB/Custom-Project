@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114008939324655004}
   - component: {fileID: 58910399594087070}
   - component: {fileID: 114980408863926258}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Powerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+  rend: {fileID: 0}
+  worth: 0
   effect: {fileID: 0}
+  coinAnim:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114980408863926258
 MonoBehaviour:
   m_ObjectHideFlags: 1

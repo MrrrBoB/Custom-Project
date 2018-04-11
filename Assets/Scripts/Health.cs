@@ -20,7 +20,7 @@ public class Health : MonoBehaviour {
 	public void ChangeHealth(int value)
 	{HP += value;
 		if (value <= 0) {
-			if (HP <= 0) {
+			if (HP <= 0&&!(gameObject.tag=="Player")) {
 				Die ();
 			} else
 				animV.SetTrigger ("Damaged");

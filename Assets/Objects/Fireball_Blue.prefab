@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50730235811748292}
   - component: {fileID: 58896893174430406}
   - component: {fileID: 114906326455749618}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Fireball_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1357031408488926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8831524, y: -4.092009, z: -9.763161}
+  m_LocalPosition: {x: 1.8831524, y: -4.092009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
