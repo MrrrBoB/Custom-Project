@@ -55,3 +55,4 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   dead: 0
+  UIM: {fileID: 0}

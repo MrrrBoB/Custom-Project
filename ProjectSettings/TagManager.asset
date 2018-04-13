@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
-  - danger
+  - enemy
+  - destructible
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - Pickups
   - Projectile
-  - 
+  - World
   - 
   - 
   - 

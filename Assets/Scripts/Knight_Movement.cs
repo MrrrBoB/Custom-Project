@@ -32,6 +32,7 @@ public class Knight_Movement : MonoBehaviour {
 		shld = FindObjectOfType<Shield> ().GetComponent<Shield>();
 		hitcount = 0;
 
+
 		//sparkles = GetComponent<ParticleSystem> ();
 	}
 	
@@ -108,8 +109,9 @@ public class Knight_Movement : MonoBehaviour {
 		//Debug.DrawRay(position, direction, Color.green);
 		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange, enemyLayer);
 		if (hit.collider != null) {
+			if (hit.collider.tag=="enemy"||hit.collider.tag=="destructible")
 			hit.collider.gameObject.GetComponent<Health> ().ChangeHealth (attDmg * -1);
-			hit.collider.gameObject.GetComponent<Chicken_Movement> ().Whack ();
+
 
 			Debug.Log ("you smacked the chicken");
 		}

@@ -53,4 +53,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinCounter: {fileID: 0}
   instance: {fileID: 0}
-  healthBar: {fileID: 0}

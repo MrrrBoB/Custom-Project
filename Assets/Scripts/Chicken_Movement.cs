@@ -34,10 +34,7 @@ public class Chicken_Movement : MonoBehaviour {
 		speed = holdS;
 		GetComponent<SpriteRenderer>().flipX=!goingLeft;
 		}
-	public void Whack()
-	{
-		ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
-	}
+
 	public void Spit()
 	{
 		ChickenAnim.SetTrigger ("Spit");
