@@ -37,7 +37,7 @@ public class PowerUp : MonoBehaviour {
 	{
 		
 	}
-	private void OnTriggerEnter2D() 
+	private void OnTriggerEnter() 
 	{
 		switch (powerUpType) {
 		case Power.HP:

@@ -35,12 +35,13 @@ public class Coin : MonoBehaviour {
 		}
 	}
 
-	private void OnCollisionEnter2D(Collision2D obj) 
+	private void OnTriggerEnter() 
 	{
-		if (obj.gameObject.tag == "Player") {
+		
 			FindObjectOfType<GameManager> ().addCoin (value);
+			Debug.Log ("Picked up coin");
 			Explode ();
-		}
+
 
 	}
 
