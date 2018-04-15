@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Attack_Melee.cs" />
      <Compile Include="Assets\Scripts\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\CharacterMovement2D.cs" />
      <Compile Include="Assets\Scripts\Chicken_Movement.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\Dragon.cs" />

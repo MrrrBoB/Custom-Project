@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 50640241235913766}
   - component: {fileID: 58008937113827538}
   - component: {fileID: 114707743739743726}
+  - component: {fileID: 114625186325286072}
   m_Layer: 12
   m_Name: FireBall_Green
   m_TagString: Untagged
@@ -113,6 +114,18 @@ MonoBehaviour:
   effect: {fileID: 198793108801847748, guid: 527336a98003cef49a8ae9a314baa8b9, type: 2}
   effectFloor: {fileID: 198427938912578382, guid: 7c6d406a10722bc4197efef269c53449,
     type: 2}
+--- !u!114 &114625186325286072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1976734351137030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab16f3df6daf5d64287df21c49027d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageSTR: 0
 --- !u!114 &114707743739743726
 MonoBehaviour:
   m_ObjectHideFlags: 1

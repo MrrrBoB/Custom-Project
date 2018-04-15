@@ -20,11 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4801775642268194}
   - component: {fileID: 212723995638563996}
-  - component: {fileID: 50895152643316632}
-  - component: {fileID: 70247055629698996}
   - component: {fileID: 114158101056000068}
   - component: {fileID: 95422903063739076}
-  - component: {fileID: 114773491190890204}
+  - component: {fileID: 114436734597780390}
+  - component: {fileID: 50988842278182414}
+  - component: {fileID: 114999182531779458}
+  - component: {fileID: 70562576833410856}
   m_Layer: 10
   m_Name: PlayerChar 1
   m_TagString: Player
@@ -87,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146614947807634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -5, z: 0}
+  m_LocalPosition: {x: 0.11, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children:
   - {fileID: 4463992249031256}
@@ -108,7 +109,7 @@ Transform:
   m_Father: {fileID: 4801775642268194}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50895152643316632
+--- !u!50 &50988842278182414
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -119,15 +120,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 3
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &61821487751790632
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -153,7 +154,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 0.5}
   m_EdgeRadius: 0
---- !u!70 &70247055629698996
+--- !u!70 &70562576833410856
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -165,8 +166,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.3426347, y: 4}
+  m_Offset: {x: 0, y: -0.125}
+  m_Size: {x: 2, y: 3.5}
   m_Direction: 0
 --- !u!95 &95422903063739076
 Animator:
@@ -177,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 1146614947807634}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 10c12e3147470804b8c957be120df150, type: 2}
+  m_Controller: {fileID: 9100000, guid: f7e0ef4f670256044895caaf648cb600, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -209,7 +210,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animV: {fileID: 0}
   HP: 100
-  UIM: {fileID: 0}
+  effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
+  healthBar: {fileID: 0}
+--- !u!114 &114436734597780390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146614947807634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f805ce0e685554cad21cb099e83ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingRange: 3
+  attDmg: 10
+  hitcount: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8704
 --- !u!114 &114694041356944938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &114773491190890204
+--- !u!114 &114999182531779458
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -230,25 +249,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146614947807634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c71fc62c9c47741af0b972842145f2, type: 3}
+  m_Script: {fileID: 11500000, guid: c49a2b5308320e5408a7ff3ad72e0634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
-  jump: 6
-  facing: 0
-  hitcount: 0
+  speed: 2
+  jumpSpeed: 4
+  gravity: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  sparkles: {fileID: 0}
-  swingMin: 0
-  swingMax: 0
-  swingRange: 3
-  attDmg: 10
-  shld: {fileID: 0}
 --- !u!198 &198731422513204874
 ParticleSystem:
   m_ObjectHideFlags: 1

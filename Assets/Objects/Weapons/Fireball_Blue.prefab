@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 50730235811748292}
   - component: {fileID: 58896893174430406}
   - component: {fileID: 114906326455749618}
+  - component: {fileID: 114557524322831962}
   m_Layer: 12
   m_Name: Fireball_Blue
   m_TagString: Untagged
@@ -97,6 +98,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114557524322831962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357031408488926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab16f3df6daf5d64287df21c49027d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageSTR: 0
 --- !u!114 &114709748421302054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 5
-  damageStr: 20
+  damageStr: 0
   effect: {fileID: 198147413197348626, guid: ec9532c641c56ca4ca30c2d087cc9ffa, type: 2}
   effectFloor: {fileID: 198803128549124614, guid: 94b548383a4b1c9408a6bc53e3945f4c,
     type: 2}

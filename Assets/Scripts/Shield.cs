@@ -8,7 +8,7 @@ public class Shield : MonoBehaviour {
 	public void Start(){
 		wall = GetComponent<Collider2D> ();
 		wall.enabled = false;
-		player = FindObjectOfType<Knight_Movement> ().gameObject;
+		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 	}
 	void Update()
 	{

@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad (gameObject);
 
-		player = FindObjectOfType<Knight_Movement> ().gameObject;
+		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 		UIM = FindObjectOfType<UIManager> ().GetComponent<UIManager> ();
 	}
 

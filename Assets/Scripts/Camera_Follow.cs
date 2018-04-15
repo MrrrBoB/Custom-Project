@@ -7,7 +7,7 @@ public class Camera_Follow : MonoBehaviour {
 	private Vector3 offset;
 	// Use this for initialization
 	void Start () {
-		player = FindObjectOfType<Knight_Movement> ().gameObject;
+		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 		offset = transform.position - player.transform.position;
 	}
 	

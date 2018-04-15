@@ -11,7 +11,7 @@ public class PowerUp : MonoBehaviour {
 	public int value;
 	public GameObject player;
 	public void Start(){
-		player = FindObjectOfType<Knight_Movement>().gameObject;
+		player = FindObjectOfType<CharacterMovement2D>().gameObject;
 		pic = GetComponent<SpriteRenderer> ();
 		powerUpType = (Power)Random.Range (0, 4);
 		switch (powerUpType) {
@@ -37,14 +37,14 @@ public class PowerUp : MonoBehaviour {
 	{
 		
 	}
-	private void OnTriggerEnter() 
+	private void OnTriggerEnter2D() 
 	{
 		switch (powerUpType) {
 		case Power.HP:
 			player.GetComponent<Health> ().ChangeHealth (value);
 			break;
 		case Power.DMG:
-			player.GetComponent<Knight_Movement> ().attDmg *= 2;
+			player.GetComponent<Attack_Melee> ().attDmg *= 2;
 			break;
 		case Power.INV:
 			pic.sprite = images [2];
