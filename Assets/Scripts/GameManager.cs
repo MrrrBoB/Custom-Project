@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public int health;
 	public GameObject player;
 	public bool dead;
+	public int lives;
 	public UIManager UIM;
 
 
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
 
 		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 		UIM = FindObjectOfType<UIManager> ().GetComponent<UIManager> ();
+		UIM.changeLives (lives);
 	}
 
 	/*public void CCursor ()
@@ -42,6 +44,14 @@ public class GameManager : MonoBehaviour {
 		coinCount += value;
 		print ("Coins: "+coinCount);
 		UIM.AddCoins (coinCount);
+	}
+	public void changeLives(int value)
+	{
+		lives += value;
+		UIM.changeLives (lives);
+		if (lives <= 0) {
+			LoadLevel ("GameOver");
+		}
 	}
 	//fireball hits player
 

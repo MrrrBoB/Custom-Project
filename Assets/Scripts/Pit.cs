@@ -10,9 +10,11 @@ public class Pit : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	private void OnTriggerEnter2D ()
+	public void OnCollisionEnter2D(Collision2D obj)
 	{
-		Debug.Log("fell in pit");
-
+		if (obj.gameObject.tag == "Player") {
+			Debug.Log ("fell in pit");
+			manager.LoadLevel ("GameOver");
+		}
 	}
 }

@@ -6,13 +6,15 @@ public class CharacterMovement2D : MonoBehaviour {
 	public float speed = 6f;
 	public float jumpSpeed= 8f;
 	public float gravity = 20f;
-	private int facing;
+	public int facing;
 	public LayerMask groundLayer;
 	private Vector3 moveDirection = Vector3.zero;
 	private Animator KnightAnimator;
 	private Attack_Melee attack;
-	public Transform GroundCheck;
 	private Rigidbody2D rigid;
+	public Shield shldT;
+	public Shield shldL;
+	public Shield shldR;
 
 	// Use this for initialization
 	void Awake() {
@@ -53,8 +55,11 @@ public class CharacterMovement2D : MonoBehaviour {
 		//attack-refers to attack mele
 		if (Input.GetButtonDown("Fire1")) {
 			attack.Swipe (facing);
-
 		}
+		shldL.toggle (facing);
+		shldT.toggle (facing);
+		shldR.toggle (facing);
+
 	}
 	public void FixedUpdate()
 	{

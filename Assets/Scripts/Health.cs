@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
 	public Animator animV;
 	public int HP;
+	private int maxHP;
 	public ParticleSystem effect;
 	public Slider healthBar;
 	public void Start()
@@ -13,6 +14,7 @@ public class Health : MonoBehaviour {
 		animV = GetComponent<Animator> ();
 		if (healthBar!=null)
 		healthBar.maxValue = HP;
+		maxHP = HP;
 
 	}
 
@@ -23,11 +25,15 @@ public class Health : MonoBehaviour {
 
 	public void ChangeHealth(int value)
 	{HP += value;
-		if (value <= 0) {
+		if (value < 0) {
 			Whack ();
 			if (HP <= 0 && !(gameObject.tag == "Player")) {
 				Die ();
-			} else 
+			} else if (HP<=0 && (gameObject.tag=="Player"))
+				{
+				FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
+				HP = maxHP;
+				}
 			{ 
 				if(animV!=null)
 				animV.SetTrigger ("Damaged");
@@ -38,16 +44,25 @@ public class Health : MonoBehaviour {
 			
 	}
 	public void Die ()
-	{Destroy (gameObject);}
+	{
+		if (GetComponent<Loot> () != null) 
+		{
+			gameObject.GetComponent<Loot> ().dropLoot ();
+		}
+		Destroy (gameObject);
+		}
 
 	public void Whack()
 	{
 		ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
 	}
 	public void changeHealthBar (int damage)
-	{healthBar.value -= damage;
-		if (gameObject.tag==("Player")&&healthBar.value <= 0) {
-			FindObjectOfType<GameManager> ().GetComponent<GameManager> ().LoadLevel ("GameOver");
+	{
+		healthBar.value -= damage;
+		if (gameObject.tag == ("Player") && healthBar.value <= 0) {
+			print ("youlost");
+			healthBar.value = maxHP;
 		}
+
 	}
 }

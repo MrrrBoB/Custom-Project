@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 	public Text coinCounter;
+	public Text lifeCounter;
 	public UIManager instance = null;
 
 
@@ -36,6 +37,10 @@ public class UIManager : MonoBehaviour {
 	public void AddCoins(int count)
 	{
 		coinCounter.text = count.ToString();
+	}
+	public void changeLives(int value)
+	{
+		lifeCounter.text = value.ToString ();
 	}
 
 }

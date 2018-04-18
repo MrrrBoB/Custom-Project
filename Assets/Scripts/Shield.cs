@@ -5,21 +5,23 @@ using UnityEngine;
 public class Shield : MonoBehaviour {
 	Collider2D wall;
 	public GameObject player;
+	public int side;
 	public void Start(){
 		wall = GetComponent<Collider2D> ();
 		wall.enabled = false;
 		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 	}
-	void Update()
-	{
+
+
+	public void toggle(int facing){
 		
-		if (Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.DownArrow)) {
-			wall.enabled=true;
+			if (side == facing&&Input.GetMouseButton (1)) {
+				wall.enabled = true;
+			} else
+				wall.enabled = false;
 		}
-		if(Input.GetKeyUp(KeyCode.S)||Input.GetKeyUp(KeyCode.DownArrow)){
-				wall.enabled=false;
-			}
-	}
+		
+
 
 	// Use this for initialization
 

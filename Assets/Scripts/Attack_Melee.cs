@@ -38,7 +38,7 @@ public class Attack_Melee : MonoBehaviour {
 		}
 		//Debug.DrawRay (position, direction, Color.green, .25f);
 		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange, enemyLayer);
-		if (hit.collider != null) {
+		if (hit.collider != null&&hit.collider.gameObject.GetComponent<Health>()!=null) {
 			hit.collider.gameObject.GetComponent<Health> ().ChangeHealth (attDmg * -1);
 
 

@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\Knight_Movement.cs" />
+     <Compile Include="Assets\Scripts\Loot.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\PE_toggle.cs" />
      <Compile Include="Assets\Scripts\PEstart.cs" />

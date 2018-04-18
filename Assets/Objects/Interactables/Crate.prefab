@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212796364855072734}
   - component: {fileID: 114664686620776128}
   - component: {fileID: 61332204743605748}
+  - component: {fileID: 114980947171292184}
   m_Layer: 11
   m_Name: Crate
   m_TagString: ground
@@ -82,6 +83,25 @@ MonoBehaviour:
   HP: 50
   effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
   healthBar: {fileID: 0}
+--- !u!114 &114980947171292184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379981090399762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ad3289ebc3f834fa9792732026bcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableSize: 3
+  lootTable:
+  - {fileID: 1123906044558272, guid: 4ded3ae02811be543a52948705413e19, type: 2}
+  - {fileID: 1003505518922702, guid: a6143aa616f243649ada5630d4e135bc, type: 2}
+  - {fileID: 1003505518922702, guid: a6143aa616f243649ada5630d4e135bc, type: 2}
+  dropChance: 0a00000032000000
+  springForce: 500
+  springSpread: 100
 --- !u!212 &212796364855072734
 SpriteRenderer:
   m_ObjectHideFlags: 1
