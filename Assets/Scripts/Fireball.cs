@@ -18,7 +18,8 @@ public class Fireball : MonoBehaviour {
 
 	public void OnCollisionEnter2D(Collision2D obj)
 	{
-		if (obj.gameObject.tag == "Player") {
+		
+		if (obj.gameObject.tag == "Player"&&obj.gameObject.GetComponent<Shield>()==null) {
 			Debug.Log ("Hit!");
 
 			obj.gameObject.GetComponent<Health> ().ChangeHealth (damageStr * -1);

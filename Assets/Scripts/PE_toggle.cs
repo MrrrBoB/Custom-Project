@@ -14,7 +14,7 @@ public class PE_toggle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		ps.enableEmission = (Input.GetAxisRaw ("Vertical") < 0);
+		ps.enableEmission = (Input.GetMouseButton(1));
 	}
 
 }

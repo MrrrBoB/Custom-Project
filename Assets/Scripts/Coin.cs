@@ -35,7 +35,7 @@ public class Coin : MonoBehaviour {
 		}
 	}
 
-	public void OnCollisionEnter2D(Collision2D obj) 
+	public void OnTriggerEnter2D(Collider2D obj) 
 	{
 		if (obj.gameObject.tag == "Player") {
 			FindObjectOfType<GameManager> ().addCoin (value);

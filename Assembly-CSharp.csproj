@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{08F43B40-8FC2-4662-6ACB-B8C2D800658C}</ProjectGuid>
+    <ProjectGuid>{61550523-CAA6-584F-5C6E-C644E3B159A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -69,6 +69,9 @@
      <Compile Include="Assets\Scripts\PEstart.cs" />
      <Compile Include="Assets\Scripts\Pit.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
+     <Compile Include="Assets\Scripts\RendererExtensions.cs" />
+     <Compile Include="Assets\Scripts\ScrollingParallax.cs" />
+     <Compile Include="Assets\Scripts\ScrollingScript.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\SpawnOnHit.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
