@@ -60,7 +60,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4556838342797772}
   - component: {fileID: 61910056236457278}
-  - component: {fileID: 114637533577162766}
   m_Layer: 8
   m_Name: Shield (1)
   m_TagString: ground
@@ -94,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4522030140317884}
   - component: {fileID: 61283265448597796}
-  - component: {fileID: 114299576282396418}
   m_Layer: 8
   m_Name: Shield (2)
   m_TagString: ground
@@ -324,19 +322,6 @@ MonoBehaviour:
   HP: 100
   effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
   healthBar: {fileID: 0}
---- !u!114 &114299576282396418
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1944066988406966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c300e275758899441b747a7aa6a2eb02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  side: -1
 --- !u!114 &114436734597780390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,19 +339,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 2560
---- !u!114 &114637533577162766
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1294969457482858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c300e275758899441b747a7aa6a2eb02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  side: 1
 --- !u!114 &114694041356944938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  side: 0
+  shields: []
 --- !u!114 &114999182531779458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,9 +370,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  shldT: {fileID: 114694041356944938}
-  shldL: {fileID: 114637533577162766}
-  shldR: {fileID: 114299576282396418}
+  shld: {fileID: 0}
 --- !u!198 &198731422513204874
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -12,9 +12,8 @@ public class CharacterMovement2D : MonoBehaviour {
 	private Animator KnightAnimator;
 	private Attack_Melee attack;
 	private Rigidbody2D rigid;
-	public Shield shldT;
-	public Shield shldL;
-	public Shield shldR;
+	public Shield shld;
+
 
 	// Use this for initialization
 	void Awake() {
@@ -56,9 +55,11 @@ public class CharacterMovement2D : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1")) {
 			attack.Swipe (facing);
 		}
-		shldL.toggle (facing);
-		shldT.toggle (facing);
-		shldR.toggle (facing);
+		if (Input.GetMouseButton (1)) 
+		{
+			shld.toggle (facing);
+		}
+		else shld.off();
 
 	}
 	public void FixedUpdate()

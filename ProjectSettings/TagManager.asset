@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - destructible
   - danger
+  - Shield
   layers:
   - Default
   - TransparentFX

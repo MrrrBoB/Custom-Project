@@ -3,24 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : MonoBehaviour {
-	Collider2D wall;
+	Collider2D wallL;
+	Collider2D wallT;
+	Collider2D wallR;
 	public GameObject player;
-	public int side;
+	public GameObject[] shields = new GameObject[3];
 	public void Start(){
-		wall = GetComponent<Collider2D> ();
-		wall.enabled = false;
+		
+		wallL = shields [0].GetComponent<Collider2D> ();
+		wallT = shields [1].GetComponent<Collider2D> ();
+		wallR = shields [2].GetComponent<Collider2D> ();
+		wallL.enabled = false;
+		wallT.enabled = false;
+		wallR.enabled=false;
 		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 	}
 
 
 	public void toggle(int facing){
-		
-			if (side == facing&&Input.GetMouseButton (1)) {
-				wall.enabled = true;
-			} else
-				wall.enabled = false;
+		switch (facing) 
+		{
+		case -1:
+			wallL.enabled = true;
+			wallT.enabled = false;
+			wallR.enabled = false;
+			break;
+		case 0:
+			wallT.enabled = true;
+			wallL.enabled = false;
+			wallR.enabled = false;
+			break;
+		case 1:
+			wallR.enabled = true;
+			wallL.enabled = false;
+			wallT.enabled = false;
+			break; 
+		default:
+			wallL.enabled = false;
+			wallT.enabled = false;
+			wallR.enabled = false;
+			break;
 		}
-		
+
+				
+		}
+	public void off()
+	{
+		wallL.enabled = false;
+		wallT.enabled = false;
+		wallR.enabled = false;
+	}
 
 
 	// Use this for initialization
