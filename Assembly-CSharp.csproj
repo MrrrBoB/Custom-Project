@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{61550523-CAA6-584F-5C6E-C644E3B159A4}</ProjectGuid>
+    <ProjectGuid>{08F43B40-8FC2-4662-6ACB-B8C2D800658C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,10 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CheckPoint.cs" />
      <Compile Include="Assets\Scripts\Attack_Melee.cs" />
      <Compile Include="Assets\Scripts\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement2D.cs" />
+     <Compile Include="Assets\Scripts\Check.cs" />
      <Compile Include="Assets\Scripts\Chicken_Movement.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\Dragon.cs" />
@@ -74,6 +76,7 @@
      <Compile Include="Assets\Scripts\ScrollingParallax.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\SpawnOnHit.cs" />
+     <Compile Include="Assets\Scripts\TimedSpawn.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Scripts\Uninterruptable.cs" />
  <Reference Include="UnityEngine.UI">

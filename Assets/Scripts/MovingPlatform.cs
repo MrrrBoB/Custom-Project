@@ -5,10 +5,9 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour {
 	public int direction;
 	public float speed;
-
+	public float directionTime;
 	// Use this for initialization
 	void Start () {
-		direction = -1;
 		StartCoroutine ("routine");
 	}
 	
@@ -24,7 +23,7 @@ public class MovingPlatform : MonoBehaviour {
 	private IEnumerator routine()
 	{
 		while (true) {
-			yield return new WaitForSeconds (2);
+			yield return new WaitForSeconds (directionTime);
 			Turn ();
 
 

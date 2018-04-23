@@ -14,7 +14,7 @@ public class Pit : MonoBehaviour {
 	{
 		if (obj.gameObject.tag == "Player") {
 			Debug.Log ("fell in pit");
-			manager.LoadLevel ("GameOver");
+			obj.gameObject.GetComponent<Health> ().ChangeHealth (obj.gameObject.GetComponent<Health> ().HP*-1);
 		}
 	}
 }

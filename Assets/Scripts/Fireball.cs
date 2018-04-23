@@ -21,7 +21,7 @@ public class Fireball : MonoBehaviour {
 		if (obj.gameObject.GetComponent<Shield>()) {
 			Destroy (gameObject);	
 		}
-		if (obj.gameObject.GetComponent<Shield>()==null&&obj.gameObject.CompareTag("Player")) {
+		if (obj.gameObject.CompareTag("Player")) {
 			Debug.Log ("Hit!");
 			Debug.Log (obj.gameObject.tag);
 

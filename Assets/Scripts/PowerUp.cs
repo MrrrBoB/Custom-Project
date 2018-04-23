@@ -10,9 +10,11 @@ public class PowerUp : MonoBehaviour {
 	public ParticleSystem effect;
 	public int value;
 	public GameObject player;
+	public bool random;
 	public void Start(){
 		player = FindObjectOfType<CharacterMovement2D>().gameObject;
 		pic = GetComponent<SpriteRenderer> ();
+		if (random)
 		powerUpType = (Power)Random.Range (0, 4);
 		switch (powerUpType) {
 		case Power.HP:
@@ -42,13 +44,13 @@ public class PowerUp : MonoBehaviour {
 				player.GetComponent<Health> ().ChangeHealth (value);
 				break;
 			case Power.DMG:
-				player.GetComponent<Attack_Melee> ().attDmg *= 2;
+				player.GetComponent<CharacterMovement2D> ().DamageBoost ();
 				break;
 			case Power.INV:
 				player.GetComponent<CharacterMovement2D> ().invincible ();
 				break;
 			case Power.CHK:
-				pic.sprite = images [3];
+				FindObjectOfType<GameManager> ().lives += 1;
 				break;
 			default:
 				pic.sprite = images [4];

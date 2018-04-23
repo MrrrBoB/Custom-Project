@@ -9,7 +9,7 @@ public class FirePuddle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		puddleAnim = GetComponent<Animator> ();
-		StartCoroutine (DelayedAnimation ());
+		StartCoroutine (FizzleOut ());
 
 	}
 	
@@ -25,7 +25,7 @@ public class FirePuddle : MonoBehaviour {
 			obj.gameObject.GetComponent<Health> ().ChangeHealth (damageStr * -1);
 		}
 	}
-	private IEnumerator DelayedAnimation(){
+	private IEnumerator FizzleOut(){
 		
 		puddleAnim.SetInteger ("Stage", 1);
 		yield return new WaitForSeconds (2.667f);

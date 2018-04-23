@@ -10,13 +10,14 @@ public class Health : MonoBehaviour {
 	public ParticleSystem effect;
 	public Slider healthBar;
 	public bool invulnerable;
+	public GameObject spawn;
 	public void Start()
 	{
 		animV = GetComponent<Animator> ();
 		if (healthBar!=null)
 		healthBar.maxValue = HP;
 		maxHP = HP;
-
+		spawn = GameObject.Find ("SpawnPoint");
 	}
 
 
@@ -34,7 +35,9 @@ public class Health : MonoBehaviour {
 				} else if (HP <= 0 && (gameObject.tag == "Player")) {
 					FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
 					HP = maxHP;
+					transform.position = spawn.transform.position;
 				}
+				else
 				{ 
 					if (animV != null)
 						animV.SetTrigger ("Damaged");

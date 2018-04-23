@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4299735569839118}
   - component: {fileID: 61667232269706592}
+  - component: {fileID: 114321103488461808}
   m_Layer: 8
   m_Name: Endless Pit
   m_TagString: Untagged
@@ -65,3 +66,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 81.47676, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114321103488461808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717276835061880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0568e1ac7b119164797c74cfa2bc0e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}

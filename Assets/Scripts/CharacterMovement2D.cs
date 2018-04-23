@@ -15,6 +15,7 @@ public class CharacterMovement2D : MonoBehaviour {
 	private SpriteRenderer ren;
 	public Shield shld;
 	private Color gld= new Color(1f, 1f, .5f ,1f);
+	private Color ppl = new Color (1f, .5f, 1f, 1f);
 	private Color dflt= new Color(1f, 1f, 1f ,1f);
 
 
@@ -87,14 +88,25 @@ public class CharacterMovement2D : MonoBehaviour {
 		return false;
 	}
 	public void invincible ()
-	{StartCoroutine ("DelayedAnimation");
+	{StartCoroutine ("Invulnerable");
 	}
-	private IEnumerator DelayedAnimation(){
+	private IEnumerator Invulnerable(){
 		ren.color = gld;
 		GetComponent<Health> ().invulnerable = true;
 		yield return new WaitForSeconds (10f);
 		ren.color = dflt;
 		GetComponent<Health> ().invulnerable = false;
 	}
+	public void DamageBoost ()
+	{StartCoroutine ("Frenzy");
+	}
+	private IEnumerator Frenzy(){
+		ren.color = ppl;
+		GetComponent<Attack_Melee> ().attDmg *= 2;
+		yield return new WaitForSeconds (10f);
+		ren.color = dflt;
+		GetComponent<Attack_Melee> ().attDmg /= 2;
+	}
+
 
 }
