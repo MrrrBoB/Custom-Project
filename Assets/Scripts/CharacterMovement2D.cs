@@ -12,7 +12,10 @@ public class CharacterMovement2D : MonoBehaviour {
 	private Animator KnightAnimator;
 	private Attack_Melee attack;
 	private Rigidbody2D rigid;
+	private SpriteRenderer ren;
 	public Shield shld;
+	private Color gld= new Color(1f, 1f, .5f ,1f);
+	private Color dflt= new Color(1f, 1f, 1f ,1f);
 
 
 	// Use this for initialization
@@ -20,6 +23,7 @@ public class CharacterMovement2D : MonoBehaviour {
 		KnightAnimator =GetComponent<Animator> ();
 		attack = GetComponent<Attack_Melee> ();
 		rigid = GetComponent<Rigidbody2D> ();
+		ren = GetComponent<SpriteRenderer> ();
 	}
 
 	// Update is called once per frame
@@ -81,6 +85,16 @@ public class CharacterMovement2D : MonoBehaviour {
 
 		}
 		return false;
+	}
+	public void invincible ()
+	{StartCoroutine ("DelayedAnimation");
+	}
+	private IEnumerator DelayedAnimation(){
+		ren.color = gld;
+		GetComponent<Health> ().invulnerable = true;
+		yield return new WaitForSeconds (10f);
+		ren.color = dflt;
+		GetComponent<Health> ().invulnerable = false;
 	}
 
 }

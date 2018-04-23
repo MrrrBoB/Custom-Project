@@ -45,7 +45,7 @@ public class PowerUp : MonoBehaviour {
 				player.GetComponent<Attack_Melee> ().attDmg *= 2;
 				break;
 			case Power.INV:
-				pic.sprite = images [2];
+				player.GetComponent<CharacterMovement2D> ().invincible ();
 				break;
 			case Power.CHK:
 				pic.sprite = images [3];

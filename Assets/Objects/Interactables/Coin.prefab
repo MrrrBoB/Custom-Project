@@ -94,7 +94,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4375
+  m_Radius: 0.6
 --- !u!95 &95671352530054164
 Animator:
   serializedVersion: 3
@@ -127,6 +127,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   worth: 0
   effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
+  random: 1
   coinAnim: []
 --- !u!212 &212808093397882198
 SpriteRenderer:

@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
 	private int maxHP;
 	public ParticleSystem effect;
 	public Slider healthBar;
+	public bool invulnerable;
 	public void Start()
 	{
 		animV = GetComponent<Animator> ();
@@ -24,24 +25,24 @@ public class Health : MonoBehaviour {
 
 
 	public void ChangeHealth(int value)
-	{HP += value;
-		if (value < 0) {
-			Whack ();
-			if (HP <= 0 && !(gameObject.tag == "Player")) {
-				Die ();
-			} else if (HP<=0 && (gameObject.tag=="Player"))
-				{
-				FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
-				HP = maxHP;
+	{if (!invulnerable) {
+			HP += value;
+			if (value < 0) {
+				Whack ();
+				if (HP <= 0 && !(gameObject.tag == "Player")) {
+					Die ();
+				} else if (HP <= 0 && (gameObject.tag == "Player")) {
+					FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
+					HP = maxHP;
 				}
-			{ 
-				if(animV!=null)
-				animV.SetTrigger ("Damaged");
+				{ 
+					if (animV != null)
+						animV.SetTrigger ("Damaged");
+				}
 			}
-		}
-		if (healthBar!=null)
-		changeHealthBar (value*-1);
-			
+			if (healthBar != null)
+				changeHealthBar (value * -1);
+		}	
 	}
 	public void Die ()
 	{

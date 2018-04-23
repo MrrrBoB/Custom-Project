@@ -11,10 +11,12 @@ public class Coin : MonoBehaviour {
 	public enum Tier {Gold, Silver, Bronze};
 	public Tier worth;
 	public ParticleSystem effect;
+	public bool random;
 	public Animator[] coinAnim = new Animator[3];
 	public void Start ()
 	{
 		rend = GetComponent<SpriteRenderer> ();
+		if(random)
 		worth = (Tier)Random.Range (0, 3);
 		switch (worth) {
 		case Tier.Gold:
