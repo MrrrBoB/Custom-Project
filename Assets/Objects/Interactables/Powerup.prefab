@@ -108,7 +108,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f40916ebaa74f714abe2daf2f835e3a6, type: 3}
   - {fileID: 21300000, guid: c81a60a5fab1f4e4ba91c9a019564621, type: 3}
   effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
-  value: 0
+  value: 20
   player: {fileID: 0}
   random: 1
 --- !u!212 &212990353524090880

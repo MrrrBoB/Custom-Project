@@ -102,9 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animV: {fileID: 0}
   HP: 50
-  effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
+  effect: {fileID: 198006693763229880, guid: d50b3d01f8d280341b0daffa35bd62a4, type: 2}
   healthBar: {fileID: 0}
   invulnerable: 0
+  spawn: {fileID: 0}
 --- !u!114 &114980947171292184
 MonoBehaviour:
   m_ObjectHideFlags: 1

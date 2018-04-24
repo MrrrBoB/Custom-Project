@@ -7,6 +7,7 @@ public class Check : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawn = GameObject.Find("SpawnPoint");
+		FindObjectOfType<CharacterMovement2D> ().gameObject.transform.position = spawn.transform.position;
 		
 	}
 	
