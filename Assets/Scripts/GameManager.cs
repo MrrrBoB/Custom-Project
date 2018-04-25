@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour {
 	public int health;
 	public GameObject player;
 	public bool dead;
-	public int lives;
-	public UIManager UIM;
+	public int lifeCount;
+	public ScoreHolder hold;
 
 
 
@@ -27,11 +27,21 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad (gameObject);
 
-		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
-		UIM = FindObjectOfType<UIManager> ().GetComponent<UIManager> ();
-		UIM.changeLives (lives);
-	}
 
+
+
+		hold = FindObjectOfType<ScoreHolder> ();
+
+	}
+	public void OnLevelWasLoaded (int level)
+	{
+
+		if (level == 1) {
+			player = FindObjectOfType<CharacterMovement2D> ().gameObject;
+
+		}
+
+	}
 	/*public void CCursor ()
 	{
 		if (SceneManager.GetActiveScene ().buildIndex == 2 || SceneManager.GetActiveScene ().buildIndex == 3 || SceneManager.GetActiveScene ().buildIndex == 4)
@@ -39,21 +49,8 @@ public class GameManager : MonoBehaviour {
 		else
 			Cursor.visible = true;
 	}*/
-	public void addCoin (int value)
-	{
-		coinCount += value;
-		print ("Coins: "+coinCount);
-		UIM.AddCoins (value);
-	}
-	public void changeLives(int value)
-	{
-		lives += value;
-		UIM.changeLives (lives);
-		if (lives <= 0) {
-			LoadLevel ("GameOver");
-		}
-	}
-	//fireball hits player
+
+
 
 
 	public void LoadLevel(string Level)
@@ -73,6 +70,16 @@ public class GameManager : MonoBehaviour {
 	public void QuitGame(){
 		Debug.Log ("Quit Game");
 		Application.Quit (); 
+	}
+	public void AddCoins(int count)
+	{
+		//	coinCounter.text = count.ToString();
+		hold.IncrementScore (count);
+	}
+	public void changeLives(int value)
+	{
+		hold.IncrementLives (value);
+		Debug.Log ("reset");
 	}
 
 

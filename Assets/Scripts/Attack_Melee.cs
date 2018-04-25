@@ -9,6 +9,7 @@ public class Attack_Melee : MonoBehaviour {
 	public LayerMask enemyLayer;
 	private Animator KnightAnimator;
 	public AudioClip Contact;
+	public AudioClip Swish;
 	// Use this for initialization
 	void Start () {
 		KnightAnimator = GetComponent<Animator> ();
@@ -39,9 +40,10 @@ public class Attack_Melee : MonoBehaviour {
 		}
 		//Debug.DrawRay (position, direction, Color.green, .25f);
 		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange, enemyLayer);
+		AudioSource.PlayClipAtPoint (Swish, transform.position);
 		if (hit.collider != null)
 		{
-			AudioSource.PlayClipAtPoint (Contact, new Vector3 (0, 0, 0));
+			AudioSource.PlayClipAtPoint (Contact, transform.position);
 			if (hit.collider.gameObject.GetComponent<Health> () != null) {
 				hit.collider.gameObject.GetComponent<Health> ().ChangeHealth (attDmg * -1);
 

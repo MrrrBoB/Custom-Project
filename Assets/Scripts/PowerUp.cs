@@ -50,7 +50,7 @@ public class PowerUp : MonoBehaviour {
 				player.GetComponent<CharacterMovement2D> ().invincible ();
 				break;
 			case Power.CHK:
-				FindObjectOfType<GameManager> ().lives += 1;
+				FindObjectOfType<GameManager> ().changeLives(1);
 				break;
 			default:
 				pic.sprite = images [4];

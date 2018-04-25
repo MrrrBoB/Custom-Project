@@ -13,6 +13,7 @@ public class Coin : MonoBehaviour {
 	public ParticleSystem effect;
 	public bool random;
 	public Animator[] coinAnim = new Animator[3];
+	public AudioClip kaching;
 	public void Start ()
 	{
 		rend = GetComponent<SpriteRenderer> ();
@@ -40,7 +41,7 @@ public class Coin : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D obj) 
 	{
 		if (obj.gameObject.tag == "Player") {
-			FindObjectOfType<GameManager> ().addCoin (value);
+			FindObjectOfType<GameManager> ().AddCoins (value);
 			Explode ();
 		}
 
@@ -48,6 +49,7 @@ public class Coin : MonoBehaviour {
 
 
 	private void Explode() {
+		AudioSource.PlayClipAtPoint (kaching, transform.position);
 		ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}

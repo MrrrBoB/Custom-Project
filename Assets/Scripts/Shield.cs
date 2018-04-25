@@ -16,9 +16,14 @@ public class Shield : MonoBehaviour {
 		wallL.enabled = false;
 		wallT.enabled = false;
 		wallR.enabled=false;
-		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
-	}
 
+	}
+	public void OnLevelWasLoaded (int level)
+	{
+		if (level == 1) {
+			player = FindObjectOfType<CharacterMovement2D> ().gameObject;
+		}
+	}
 
 	public void toggle(int facing){
 		switch (facing) 

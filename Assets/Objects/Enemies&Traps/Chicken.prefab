@@ -290,6 +290,10 @@ MonoBehaviour:
   HP: 20
   effect: {fileID: 198604678869859334, guid: 39a963e2d7ca23f44ac5778d5e99abec, type: 2}
   healthBar: {fileID: 114132399803286752}
+  invulnerable: 0
+  spawn: {fileID: 0}
+  dead: {fileID: 8300000, guid: 91c0d9baa11d63a4ba8143a104e7b98e, type: 3}
+  ouch: {fileID: 8300000, guid: 9d85607d08d346c4f8bb701a66c1df27, type: 3}
 --- !u!114 &114169051385730166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,6 +354,7 @@ MonoBehaviour:
   goingLeft: 0
   direction: 0
   speed: 0.5
+  cHit: {fileID: 0}
 --- !u!114 &114480284048967908
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,6 +11,8 @@ public class Health : MonoBehaviour {
 	public Slider healthBar;
 	public bool invulnerable;
 	public GameObject spawn;
+	public AudioClip dead;
+	public AudioClip ouch;
 	public void Start()
 	{
 		animV = GetComponent<Animator> ();
@@ -18,6 +20,8 @@ public class Health : MonoBehaviour {
 		healthBar.maxValue = HP;
 		maxHP = HP;
 		spawn = GameObject.Find ("SpawnPoint");
+		if (gameObject.tag == "Player") {
+		}
 	}
 
 
@@ -31,16 +35,21 @@ public class Health : MonoBehaviour {
 			if (value < 0) {
 				Whack ();
 				if (HP <= 0 && !(gameObject.tag == "Player")) {
+					if (dead!=null)
+						AudioSource.PlayClipAtPoint (dead, transform.position);
 					Die ();
 				} else if (HP <= 0 && (gameObject.tag == "Player")) {
-					FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
-					HP = maxHP;
-					transform.position = GameObject.Find("SpawnPoint").transform.position;
+					AudioSource.PlayClipAtPoint (dead, transform.position);
+					StartCoroutine (DeathDelay ());
 				}
 				else
 				{ 
 					if (animV != null)
 						animV.SetTrigger ("Damaged");
+					if (ouch!=null)
+					AudioSource.PlayClipAtPoint (ouch, transform.position);
+				
+						
 				}
 			}
 			if (healthBar != null)
@@ -51,6 +60,7 @@ public class Health : MonoBehaviour {
 	{
 		if (GetComponent<Loot> () != null) 
 		{
+			
 			gameObject.GetComponent<Loot> ().dropLoot ();
 		}
 		Destroy (gameObject);
@@ -58,6 +68,7 @@ public class Health : MonoBehaviour {
 
 	public void Whack()
 	{
+		
 		ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
 	}
 	public void changeHealthBar (int damage)
@@ -68,5 +79,13 @@ public class Health : MonoBehaviour {
 			healthBar.value = maxHP;
 		}
 
+	}
+	private IEnumerator DeathDelay()
+	{
+		animV.SetTrigger ("Dead");
+		yield return new WaitForSeconds (1.333f);
+		FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
+		HP = maxHP;
+		transform.position = GameObject.Find("SpawnPoint").transform.position;
 	}
 }

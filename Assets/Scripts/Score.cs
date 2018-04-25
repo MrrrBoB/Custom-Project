@@ -5,9 +5,13 @@ using UnityEngine;
 public class Score : ScriptableObject {
 
 	// Use this for initialization
-	public int amount;
+	public int coinCount;
+	public int lives;
+	public int playerHealth;
 	public void ResetScore()
 	{
-		amount = 0;
+		coinCount = 0;
+		lives = 3;
+		playerHealth = 100;
 	}
 }

@@ -10,6 +10,7 @@ public class Chicken_Movement : MonoBehaviour {
 	public int direction;
 	public float speed;
 	private float holdS;
+	public AudioClip cHit;
 	// Use this for initialization
 	void Start () {
 		ChickenAnim = GetComponent<Animator> ();

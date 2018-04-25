@@ -18,5 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/LVL_3.unity
     guid: ec002967415cdca4a98e0d768966b4bb
   - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 902f81b3a8f658e498e2195933c915cd
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 751aaa2e2d69ead47905a43a5190132c
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/792a874daa19daf43ae2eca79a0fd6a2
+    guid: 792a874daa19daf43ae2eca79a0fd6a2

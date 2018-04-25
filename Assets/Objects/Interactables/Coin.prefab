@@ -129,6 +129,7 @@ MonoBehaviour:
   effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
   random: 1
   coinAnim: []
+  kaching: {fileID: 8300000, guid: 51d1780b6d3190747ae727ff870cc758, type: 3}
 --- !u!212 &212808093397882198
 SpriteRenderer:
   m_ObjectHideFlags: 1

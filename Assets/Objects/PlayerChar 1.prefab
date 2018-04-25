@@ -70,8 +70,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146614947807634}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.27, y: -3.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children:
   - {fileID: 4681708417619334}
@@ -157,6 +157,9 @@ MonoBehaviour:
   effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
   healthBar: {fileID: 0}
   invulnerable: 0
+  spawn: {fileID: 0}
+  dead: {fileID: 8300000, guid: d768f54d19d36604f97cc1a2a830f25f, type: 3}
+  ouch: {fileID: 8300000, guid: df685aa82a0384840b2cf2445aed8b1c, type: 3}
 --- !u!114 &114436734597780390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,6 +177,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 2560
+  Contact: {fileID: 8300000, guid: 515cedc63f142544ebefcb1cc5ee80f8, type: 3}
+  Swish: {fileID: 8300000, guid: a580b46c7c6743c44a2ec89f359d4791, type: 3}
 --- !u!114 &114999182531779458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,7 +197,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8448
-  shld: {fileID: 0}
+  shld: {fileID: 114352963474651798, guid: 61b6d7efac1382c4896e0c69c98b7423, type: 2}
+  jump: {fileID: 8300000, guid: 087d9b73edc86a44bb8d33908fcb4d74, type: 3}
+  walk: {fileID: 0}
 --- !u!198 &198775508223724084
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -763,7 +770,7 @@ ParticleSystem:
           m_RotationOrder: 4
     arc:
       value: 270
-      mode: 0
+      mode: 1
       spread: 0
       speed:
         serializedVersion: 2

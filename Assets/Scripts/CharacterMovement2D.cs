@@ -18,6 +18,8 @@ public class CharacterMovement2D : MonoBehaviour {
 	private Color ppl = new Color (1f, .5f, 1f, 1f);
 	private Color dflt;
 	public static CharacterMovement2D instance = null;
+	public AudioClip jump;
+	public AudioClip walk;
 
 	// Use this for initialization
 	void Start() {
@@ -80,9 +82,11 @@ public class CharacterMovement2D : MonoBehaviour {
 	public void FixedUpdate()
 	{
 		
-		if (Input.GetButton ("Jump")&&isGrounded())
-				rigid.AddForce (new Vector2 (0, jumpSpeed*100), ForceMode2D.Force);
-		
+		if (Input.GetButton ("Jump") && isGrounded ()) {
+			if (jump!=null)
+			AudioSource.PlayClipAtPoint (jump, transform.position);
+			rigid.AddForce (new Vector2 (0, jumpSpeed * 100), ForceMode2D.Force);
+		}
 	}
 
 	private bool isGrounded()
