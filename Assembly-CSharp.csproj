@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Fireball.cs" />
      <Compile Include="Assets\Scripts\FirePuddle.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GetScore.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\Knight_Movement.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
@@ -76,6 +77,8 @@
      <Compile Include="Assets\Scripts\PEstart.cs" />
      <Compile Include="Assets\Scripts\Pit.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\ScoreHolder.cs" />
      <Compile Include="Assets\Scripts\ScrollingParallax.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\SpawnOnHit.cs" />

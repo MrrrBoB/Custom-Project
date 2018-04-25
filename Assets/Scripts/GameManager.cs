@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 	{
 		coinCount += value;
 		print ("Coins: "+coinCount);
-		UIM.AddCoins (coinCount);
+		UIM.AddCoins (value);
 	}
 	public void changeLives(int value)
 	{

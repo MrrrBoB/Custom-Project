@@ -35,7 +35,7 @@ public class Health : MonoBehaviour {
 				} else if (HP <= 0 && (gameObject.tag == "Player")) {
 					FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
 					HP = maxHP;
-					transform.position = spawn.transform.position;
+					transform.position = GameObject.Find("SpawnPoint").transform.position;
 				}
 				else
 				{ 

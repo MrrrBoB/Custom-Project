@@ -2,23 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
-public class UIManager : MonoBehaviour {
-//	public Text coinCounter;
-	public Text lifeCounter;
-	public ScoreHolder hold;
-	public UIManager instance = null;
-
-
-
+public class ScoreHolder : MonoBehaviour {
+	public static ScoreHolder instance = null;
+	public Text scoreBoard;
+	public Score score;
 
 	// Use this for initialization
-
-
-
-
-
 	void Start () {
 		//If instance is empty, create instance
 		if (instance == null)
@@ -28,21 +17,15 @@ public class UIManager : MonoBehaviour {
 			Destroy (gameObject);
 
 		DontDestroyOnLoad (gameObject);
-		hold = FindObjectOfType<ScoreHolder> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-	public void AddCoins(int count)
+	public void IncrementScore(int value)
 	{
-	//	coinCounter.text = count.ToString();
-		hold.IncrementScore (count);
+		score.amount += value;
+		scoreBoard.text = score.amount.ToString ();
 	}
-	public void changeLives(int value)
-	{
-		lifeCounter.text = value.ToString ();
-	}
-
 }
