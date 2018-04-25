@@ -8,6 +8,7 @@ public class Attack_Melee : MonoBehaviour {
 	public int hitcount=0;
 	public LayerMask enemyLayer;
 	private Animator KnightAnimator;
+	public AudioClip Contact;
 	// Use this for initialization
 	void Start () {
 		KnightAnimator = GetComponent<Animator> ();
@@ -38,11 +39,14 @@ public class Attack_Melee : MonoBehaviour {
 		}
 		//Debug.DrawRay (position, direction, Color.green, .25f);
 		RaycastHit2D hit = Physics2D.Raycast(position, direction, swingRange, enemyLayer);
-		if (hit.collider != null&&hit.collider.gameObject.GetComponent<Health>()!=null) {
-			hit.collider.gameObject.GetComponent<Health> ().ChangeHealth (attDmg * -1);
+		if (hit.collider != null)
+		{
+			AudioSource.PlayClipAtPoint (Contact, new Vector3 (0, 0, 0));
+			if (hit.collider.gameObject.GetComponent<Health> () != null) {
+				hit.collider.gameObject.GetComponent<Health> ().ChangeHealth (attDmg * -1);
 
-
-			Debug.Log ("you smacked the chicken");
+				Debug.Log ("you smacked the "+hit.collider.gameObject.tag);
+			}
 		}
 		hitcount++;
 		Debug.Log (hitcount);

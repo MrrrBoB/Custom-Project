@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{61550523-CAA6-584F-5C6E-C644E3B159A4}</ProjectGuid>
+    <ProjectGuid>{08F43B40-8FC2-4662-6ACB-B8C2D800658C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,7 +57,6 @@
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement2D.cs" />
      <Compile Include="Assets\Scripts\Check.cs" />
-     <Compile Include="Assets\Scripts\CheckPoint.cs" />
      <Compile Include="Assets\Scripts\Chicken_Movement.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
@@ -72,6 +71,7 @@
      <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\MoveOnTouch.cs" />
      <Compile Include="Assets\Scripts\MovingPlatform.cs" />
+     <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\PE_toggle.cs" />
      <Compile Include="Assets\Scripts\PEstart.cs" />
      <Compile Include="Assets\Scripts\Pit.cs" />
