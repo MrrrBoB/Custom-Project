@@ -6,6 +6,7 @@ public class ScoreHolder : MonoBehaviour {
 	public static ScoreHolder instance = null;
 	public Text cCount;
 	public Text lCount;
+	public Slider healthBar;
 	public Score score;
 
 	// Use this for initialization
@@ -26,6 +27,7 @@ public class ScoreHolder : MonoBehaviour {
 		if (level == 1) {
 			cCount.text = "0";
 			lCount.text = "3";
+				healthBar.value=healthBar.maxValue;
 
 		}
 
@@ -47,4 +49,8 @@ public class ScoreHolder : MonoBehaviour {
 		if (score.lives <= 0)
 			FindObjectOfType<GameManager> ().LoadLevel ("GameOver");
 	}
+		public void incrementHP(int value)
+		{
+			
+		}
 }

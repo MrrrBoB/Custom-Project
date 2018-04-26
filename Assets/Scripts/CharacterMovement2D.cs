@@ -17,20 +17,11 @@ public class CharacterMovement2D : MonoBehaviour {
 	private Color gld= new Color(1f, 1f, .5f ,1f);
 	private Color ppl = new Color (1f, .5f, 1f, 1f);
 	private Color dflt;
-	public static CharacterMovement2D instance = null;
 	public AudioClip jump;
 	public AudioClip walk;
 
 	// Use this for initialization
 	void Start() {
-		//If instance is empty, create instance
-		if (instance == null)
-			instance = this;
-		//If instance is not *this* then destroy it
-		else if (instance != this)
-			Destroy (gameObject);
-
-		DontDestroyOnLoad (gameObject);
 		KnightAnimator =GetComponent<Animator> ();
 		attack = GetComponent<Attack_Melee> ();
 		rigid = GetComponent<Rigidbody2D> ();

@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
 	public void OnLevelWasLoaded (int level)
 	{
 
-		if (level == 1) {
+		if (level >= 1) {
 			player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 
 		}

@@ -8,7 +8,7 @@ public class Shield : MonoBehaviour {
 	Collider2D wallR;
 	public GameObject player;
 	public GameObject[] shields = new GameObject[3];
-	public void Start(){
+	public void Awake(){
 		
 		wallL = shields [0].GetComponent<Collider2D> ();
 		wallT = shields [1].GetComponent<Collider2D> ();
@@ -16,14 +16,10 @@ public class Shield : MonoBehaviour {
 		wallL.enabled = false;
 		wallT.enabled = false;
 		wallR.enabled=false;
+		player = FindObjectOfType<CharacterMovement2D> ().gameObject;
 
 	}
-	public void OnLevelWasLoaded (int level)
-	{
-		if (level == 1) {
-			player = FindObjectOfType<CharacterMovement2D> ().gameObject;
-		}
-	}
+
 
 	public void toggle(int facing){
 		switch (facing) 

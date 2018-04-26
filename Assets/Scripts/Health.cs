@@ -8,20 +8,20 @@ public class Health : MonoBehaviour {
 	public int HP;
 	private int maxHP;
 	public ParticleSystem effect;
-	public Slider healthBar;
+	public Slider hpBar;
 	public bool invulnerable;
-	public GameObject spawn;
 	public AudioClip dead;
 	public AudioClip ouch;
 	public void Start()
 	{
 		animV = GetComponent<Animator> ();
-		if (healthBar!=null)
-		healthBar.maxValue = HP;
-		maxHP = HP;
-		spawn = GameObject.Find ("SpawnPoint");
 		if (gameObject.tag == "Player") {
+			hpBar = FindObjectOfType<GameManager> ().GetComponent<ScoreHolder> ().healthBar;
 		}
+		if (hpBar!=null)
+		hpBar.maxValue = HP;
+		maxHP = HP;
+
 	}
 
 
@@ -52,7 +52,7 @@ public class Health : MonoBehaviour {
 						
 				}
 			}
-			if (healthBar != null)
+			if (hpBar != null)
 				changeHealthBar (value * -1);
 		}	
 	}
@@ -73,10 +73,10 @@ public class Health : MonoBehaviour {
 	}
 	public void changeHealthBar (int damage)
 	{
-		healthBar.value -= damage;
-		if (gameObject.tag == ("Player") && healthBar.value <= 0) {
+		hpBar.value -= damage;
+		if (gameObject.tag == ("Player") && hpBar.value <= 0) {
 			print ("youlost");
-			healthBar.value = maxHP;
+			hpBar.value = maxHP;
 		}
 
 	}
@@ -86,6 +86,6 @@ public class Health : MonoBehaviour {
 		yield return new WaitForSeconds (1.333f);
 		FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
 		HP = maxHP;
-		transform.position = GameObject.Find("SpawnPoint").transform.position;
+		transform.position = new Vector3 (0, 0, 0);
 	}
 }
