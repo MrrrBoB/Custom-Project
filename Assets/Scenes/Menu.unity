@@ -371,12 +371,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f9a45ff9c58d2842bc9944ce545819d, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &646124524 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114980718701013482, guid: 61b6d7efac1382c4896e0c69c98b7423,
-    type: 2}
-  m_PrefabInternal: {fileID: 2111992247}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &763522604
 Prefab:
   m_ObjectHideFlags: 0
@@ -1453,9 +1447,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114340727056737788, guid: 61b6d7efac1382c4896e0c69c98b7423,
         type: 2}
-      propertyPath: healthBar
+      propertyPath: ouch
       value: 
-      objectReference: {fileID: 646124524}
+      objectReference: {fileID: 8300000, guid: df685aa82a0384840b2cf2445aed8b1c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61b6d7efac1382c4896e0c69c98b7423, type: 2}
   m_IsPrefabParent: 0

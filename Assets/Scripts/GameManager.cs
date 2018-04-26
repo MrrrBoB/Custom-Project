@@ -36,10 +36,14 @@ public class GameManager : MonoBehaviour {
 	public void OnLevelWasLoaded (int level)
 	{
 
-		if (level >= 1) {
+		if ( level >= 1&&level<=4) {
 			player = FindObjectOfType<CharacterMovement2D> ().gameObject;
-
+			if (level == 4)
+				player.GetComponent<Animator> ().SetBool ("Victory", true);
+			else
+				player.GetComponent<Animator> ().SetBool ("Victory", false);
 		}
+
 
 	}
 	/*public void CCursor ()
@@ -70,6 +74,10 @@ public class GameManager : MonoBehaviour {
 	public void QuitGame(){
 		Debug.Log ("Quit Game");
 		Application.Quit (); 
+	}
+	public void changeHP(int value)
+	{
+		hold.incrementHP (value);
 	}
 	public void AddCoins(int count)
 	{

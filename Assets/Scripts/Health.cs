@@ -15,47 +15,46 @@ public class Health : MonoBehaviour {
 	public void Start()
 	{
 		animV = GetComponent<Animator> ();
-		if (gameObject.tag == "Player") {
-			hpBar = FindObjectOfType<GameManager> ().GetComponent<ScoreHolder> ().healthBar;
+		if (hpBar != null) {
+			hpBar.maxValue = HP;
+			hpBar.value = HP;
+			maxHP = HP;
 		}
-		if (hpBar!=null)
-		hpBar.maxValue = HP;
-		maxHP = HP;
-
 	}
-
-
-
 
 
 
 	public void ChangeHealth(int value)
-	{if (!invulnerable) {
-			HP += value;
-			if (value < 0) {
-				Whack ();
-				if (HP <= 0 && !(gameObject.tag == "Player")) {
-					if (dead!=null)
+	{
+		if (!invulnerable) {
+			//Only pertains to the player
+			if (this.gameObject.tag == "Player") {
+				FindObjectOfType<GameManager> ().changeHP (value);
+			} else {
+				HP += value;
+				//check if dead
+				if (HP <= 0) {
+					if (dead != null)
 						AudioSource.PlayClipAtPoint (dead, transform.position);
 					Die ();
-				} else if (HP <= 0 && (gameObject.tag == "Player")) {
-					AudioSource.PlayClipAtPoint (dead, transform.position);
-					StartCoroutine (DeathDelay ());
+			
+					//if not dead
 				}
-				else
-				{ 
-					if (animV != null)
-						animV.SetTrigger ("Damaged");
-					if (ouch!=null)
-					AudioSource.PlayClipAtPoint (ouch, transform.position);
-				
-						
-				}
+				//pertains to anyone
 			}
 			if (hpBar != null)
 				changeHealthBar (value * -1);
-		}	
+			if (value < 0) {
+				if (animV != null)
+					animV.SetTrigger ("Damaged");
+				if (ouch != null&&gameObject.tag!="Player")
+					AudioSource.PlayClipAtPoint (ouch, transform.position);
+			}
+		}
 	}
+
+
+
 	public void Die ()
 	{
 		if (GetComponent<Loot> () != null) 
@@ -80,12 +79,5 @@ public class Health : MonoBehaviour {
 		}
 
 	}
-	private IEnumerator DeathDelay()
-	{
-		animV.SetTrigger ("Dead");
-		yield return new WaitForSeconds (1.333f);
-		FindObjectOfType<GameManager> ().GetComponent<GameManager> ().changeLives (-1);
-		HP = maxHP;
-		transform.position = new Vector3 (0, 0, 0);
-	}
+
 }

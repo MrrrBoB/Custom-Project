@@ -63,11 +63,12 @@ public class CharacterMovement2D : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1")) {
 			attack.Swipe (facing);
 		}
-		if (Input.GetMouseButton (1)) 
-		{
-			shld.toggle (facing);
+		if (shld != null) {
+			if (Input.GetMouseButton (1)) {
+				shld.toggle (facing);
+			} else
+				shld.off ();
 		}
-		else shld.off();
 
 	}
 	public void FixedUpdate()
