@@ -10,13 +10,12 @@ public class PowerUp : MonoBehaviour {
 	public Sprite [] images= new Sprite[5];
 	public ParticleSystem effect;
 	public int value;
-	public GameObject player;
 	public bool random;
 	public void Start(){
-		player = FindObjectOfType<CharacterMovement2D>().gameObject;
 		pic = GetComponent<SpriteRenderer> ();
 		if (random)
 		powerUpType = (Power)Random.Range (0, 4);
+
 		switch (powerUpType) {
 		case Power.HP:
 			pic.sprite = images [0];
@@ -42,15 +41,15 @@ public class PowerUp : MonoBehaviour {
 		if (obj.gameObject.tag == "Player") {
 			switch (powerUpType) {
 			case Power.HP:
-				player.GetComponent<Health> ().ChangeHealth (value);
+				obj.gameObject.GetComponent<Health> ().ChangeHealth (value);
 				AudioSource.PlayClipAtPoint (sounds[0], transform.position);
 				break;
 			case Power.DMG:
-				player.GetComponent<CharacterMovement2D> ().DamageBoost ();
+				obj.gameObject.GetComponent<CharacterMovement2D> ().DamageBoost ();
 				AudioSource.PlayClipAtPoint (sounds[1], transform.position);
 				break;
 			case Power.INV:
-				player.GetComponent<CharacterMovement2D> ().invincible ();
+				obj.gameObject.GetComponent<CharacterMovement2D> ().invincible ();
 				AudioSource.PlayClipAtPoint (sounds[2], transform.position);
 				break;
 			case Power.CHK:

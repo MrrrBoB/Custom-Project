@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 114159293628638836}
   - component: {fileID: 61557971548976120}
   - component: {fileID: 50105460133710978}
+  - component: {fileID: 114678378800281426}
   m_Layer: 9
   m_Name: Chicken
   m_TagString: danger
@@ -381,6 +382,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114678378800281426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1364651531558700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ad3289ebc3f834fa9792732026bcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableSize: 0
+  lootTable:
+  - {fileID: 1003505518922702, guid: a6143aa616f243649ada5630d4e135bc, type: 2}
+  - {fileID: 1003505518922702, guid: a6143aa616f243649ada5630d4e135bc, type: 2}
+  - {fileID: 1003505518922702, guid: a6143aa616f243649ada5630d4e135bc, type: 2}
+  dropChance: 0a00000014000000
+  springForce: 750
+  springSpread: 100
+  minDrop: 1
+  maxDrop: 3
 --- !u!212 &212910753576636178
 SpriteRenderer:
   m_ObjectHideFlags: 1

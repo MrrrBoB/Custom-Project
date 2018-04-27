@@ -18,10 +18,8 @@ public class Fireball : MonoBehaviour {
 
 	public void OnCollisionEnter2D(Collision2D obj)
 	{
-		if (obj.gameObject.GetComponent<Shield>()) {
-			Destroy (gameObject);	
-		}
-		if (obj.gameObject.CompareTag("Player")) {
+		
+		if (obj.gameObject.tag=="Player") {
 			Debug.Log ("Hit!");
 			Debug.Log (obj.gameObject.tag);
 
@@ -34,7 +32,6 @@ public class Fireball : MonoBehaviour {
 			ParticleSystem burst = Instantiate (effect, transform.position, Quaternion.identity);
 		}
 			Destroy (gameObject);
-		
-	}
+		}
 
 }
