@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61332204743605748}
   - component: {fileID: 114980947171292184}
   - component: {fileID: 50281756849778680}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Crate
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -103,9 +103,8 @@ MonoBehaviour:
   animV: {fileID: 0}
   HP: 50
   effect: {fileID: 198006693763229880, guid: d50b3d01f8d280341b0daffa35bd62a4, type: 2}
-  healthBar: {fileID: 0}
+  hpBar: {fileID: 0}
   invulnerable: 0
-  spawn: {fileID: 0}
   dead: {fileID: 8300000, guid: 228fbd7efa800ac479fe09c1f2a9f54a, type: 3}
   ouch: {fileID: 0}
 --- !u!114 &114980947171292184
@@ -124,7 +123,7 @@ MonoBehaviour:
   - {fileID: 1123906044558272, guid: 4ded3ae02811be543a52948705413e19, type: 2}
   - {fileID: 1003505518922702, guid: a6143aa616f243649ada5630d4e135bc, type: 2}
   - {fileID: 1003505518922702, guid: a6143aa616f243649ada5630d4e135bc, type: 2}
-  dropChance: 0a00000032000000
+  dropChance: 050000000a000000
   springForce: 750
   springSpread: 100
   minDrop: 5

@@ -83,10 +83,12 @@ public class ScoreHolder : MonoBehaviour {
 
 	private IEnumerator DeathDelay()
 	{
+		player.GetComponent<Health> ().invulnerable = true;
 		player.GetComponent<Animator>().SetTrigger ("Dead");
 		AudioSource.PlayClipAtPoint (dead, player.transform.position);
 		yield return new WaitForSeconds (1.333f);
 		player.transform.position = new Vector3 (0, 0, 0);
 		incrementHP (100);
+		player.GetComponent<Health> ().invulnerable = false;
 	}
 }

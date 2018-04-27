@@ -101,6 +101,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpType: 0
   pic: {fileID: 0}
+  sounds:
+  - {fileID: 8300000, guid: 66f42f947cda2c04e98b0dd73bf1d7c0, type: 3}
+  - {fileID: 8300000, guid: ac158144373b0764faa42fc4784c2d2b, type: 3}
+  - {fileID: 8300000, guid: 8ea9c2dddd5b2674ea82658bcbd8dddf, type: 3}
+  - {fileID: 8300000, guid: 5e3c264403dc8dd409d46f53c3ee0a49, type: 3}
+  - {fileID: 8300000, guid: 51d1780b6d3190747ae727ff870cc758, type: 3}
   images:
   - {fileID: 21300000, guid: 2b2c71dfcd3f04e4fa8a65dbf0a4eee7, type: 3}
   - {fileID: 21300000, guid: 23a4155659d902848a7db49e7388e3df, type: 3}

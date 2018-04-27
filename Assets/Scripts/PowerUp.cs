@@ -6,6 +6,7 @@ public class PowerUp : MonoBehaviour {
 	public enum Power {HP, DMG, INV, CHK, DFL};
 	public Power powerUpType;
 	public SpriteRenderer pic;
+	public AudioClip[] sounds=new AudioClip[5];
 	public Sprite [] images= new Sprite[5];
 	public ParticleSystem effect;
 	public int value;
@@ -42,18 +43,23 @@ public class PowerUp : MonoBehaviour {
 			switch (powerUpType) {
 			case Power.HP:
 				player.GetComponent<Health> ().ChangeHealth (value);
+				AudioSource.PlayClipAtPoint (sounds[0], transform.position);
 				break;
 			case Power.DMG:
 				player.GetComponent<CharacterMovement2D> ().DamageBoost ();
+				AudioSource.PlayClipAtPoint (sounds[1], transform.position);
 				break;
 			case Power.INV:
 				player.GetComponent<CharacterMovement2D> ().invincible ();
+				AudioSource.PlayClipAtPoint (sounds[2], transform.position);
 				break;
 			case Power.CHK:
 				FindObjectOfType<GameManager> ().changeLives(1);
+				AudioSource.PlayClipAtPoint (sounds[3], transform.position);
 				break;
 			default:
 				pic.sprite = images [4];
+				AudioSource.PlayClipAtPoint (sounds[4], transform.position);
 				break;
 			}
 

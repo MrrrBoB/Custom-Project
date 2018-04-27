@@ -30,6 +30,7 @@ public class Health : MonoBehaviour {
 			//Only pertains to the player
 			if (this.gameObject.tag == "Player") {
 				FindObjectOfType<GameManager> ().changeHP (value);
+				StartCoroutine (IFrames ());
 			} else {
 				HP += value;
 				//check if dead
@@ -78,6 +79,11 @@ public class Health : MonoBehaviour {
 			hpBar.value = maxHP;
 		}
 
+	}
+	private IEnumerator IFrames(){
+		invulnerable = true;
+		yield return new WaitForSeconds (1f);
+		invulnerable = false;
 	}
 
 }

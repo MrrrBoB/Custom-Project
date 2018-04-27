@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146614947807634}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.27, y: -3.47, z: 0}
+  m_LocalPosition: {x: 0.22947884, y: -3.2894855, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children:
   - {fileID: 4681708417619334}
@@ -155,9 +155,8 @@ MonoBehaviour:
   animV: {fileID: 0}
   HP: 100
   effect: {fileID: 198161464408838504, guid: 8b90ea6f26fcd6e4487b956c5d97cfbe, type: 2}
-  healthBar: {fileID: 0}
+  hpBar: {fileID: 0}
   invulnerable: 0
-  spawn: {fileID: 0}
   dead: {fileID: 8300000, guid: d768f54d19d36604f97cc1a2a830f25f, type: 3}
   ouch: {fileID: 8300000, guid: df685aa82a0384840b2cf2445aed8b1c, type: 3}
 --- !u!114 &114436734597780390
@@ -176,9 +175,9 @@ MonoBehaviour:
   hitcount: 0
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 2560
-  Contact: {fileID: 8300000, guid: 515cedc63f142544ebefcb1cc5ee80f8, type: 3}
-  Swish: {fileID: 8300000, guid: a580b46c7c6743c44a2ec89f359d4791, type: 3}
+    m_Bits: 33280
+  Contact: {fileID: 8300000, guid: 81054406eddf96b4cb11ee7b351800a5, type: 3}
+  Swish: {fileID: 8300000, guid: 6969c13765e02224e8c90f5c5d8cdf4f, type: 3}
 --- !u!114 &114999182531779458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,7 +196,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8448
-  shld: {fileID: 114352963474651798, guid: 61b6d7efac1382c4896e0c69c98b7423, type: 2}
+  shld: {fileID: 0}
   jump: {fileID: 8300000, guid: 087d9b73edc86a44bb8d33908fcb4d74, type: 3}
   walk: {fileID: 0}
 --- !u!198 &198775508223724084

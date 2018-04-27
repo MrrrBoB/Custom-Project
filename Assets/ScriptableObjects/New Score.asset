@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd853836e9150d42b42f2089fb8e6d9, type: 3}
   m_Name: New Score
   m_EditorClassIdentifier: 
-  coinCount: 0
-  lives: 5
-  playerHealth: 100
+  coinCount: 700
+  lives: 2
+  playerHealth: 0

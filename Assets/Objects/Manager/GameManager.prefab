@@ -286,6 +286,7 @@ MonoBehaviour:
   score: {fileID: 11400000, guid: 1fa5d79d6cf216740b69430ae1f1bf25, type: 2}
   player: {fileID: 0}
   dead: {fileID: 8300000, guid: d768f54d19d36604f97cc1a2a830f25f, type: 3}
+  ouch: {fileID: 8300000, guid: df685aa82a0384840b2cf2445aed8b1c, type: 3}
 --- !u!114 &114481244675446770
 MonoBehaviour:
   m_ObjectHideFlags: 1

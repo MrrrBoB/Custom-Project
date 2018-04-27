@@ -14,11 +14,9 @@ public class Chicken_Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ChickenAnim = GetComponent<Animator> ();
-		goingLeft = true;
 		holdS = speed;
-		direction = -1;
 		StartCoroutine ("routine");
-
+		GetComponent<SpriteRenderer>().flipX=!goingLeft;
 	}
 	
 	// Update is called once per frame

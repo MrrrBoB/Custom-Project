@@ -98,7 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spikeAnim: {fileID: 0}
   box: {fileID: 0}
-  damage: 10
+  damage: 20
+  cycleTime: 2
+  startDelay: 0
 --- !u!212 &212796810568168110
 SpriteRenderer:
   m_ObjectHideFlags: 1
