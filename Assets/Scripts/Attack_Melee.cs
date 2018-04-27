@@ -5,7 +5,6 @@ using UnityEngine;
 public class Attack_Melee : MonoBehaviour {
 	public float swingRange;
 	public int attDmg;
-	public int hitcount=0;
 	public LayerMask enemyLayer;
 	private Animator KnightAnimator;
 	public AudioClip Contact;
@@ -50,7 +49,6 @@ public class Attack_Melee : MonoBehaviour {
 				Debug.Log ("you smacked the "+hit.collider.gameObject.tag);
 			}
 		}
-		hitcount++;
-		Debug.Log (hitcount);
+
 	}
 }
